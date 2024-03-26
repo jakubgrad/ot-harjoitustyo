@@ -7,7 +7,7 @@ A user can log in and fill out an assessment of their home. <br />
 **User interface draft**<br />
 A user is welcomed by login/register buttons. If they click register, they're taken to registration. If they choose login, they are presented with the information about their house. If they haven't created it yet, there will be a "Create new house" button, clicking on which a user is taken to an assessment.<br />
 
-![User interface draft](/user_interface_draft.png)
+![User interface draft](documentation/user_interface_draft.png)
 
 **Functionality**<br />
 Before logging in:<br />
