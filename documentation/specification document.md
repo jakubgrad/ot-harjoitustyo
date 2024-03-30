@@ -15,9 +15,11 @@ A user is welcomed by login/register buttons. If they click register, they're ta
 - [ ] The user can register in the system<br />
 - [ ] The user can log into the system with existing credentials<br />
 - [ ] If the user does not exist, or the password does not match, there is information about it<br />
+
 **After logging in**<br />
 - [ ] The user can complete an assesment of their home.<br />
 - [ ] Afterwards they can see the information about their home such as pollution generated and consumption of electricity <br />
+
 **Further development ideas**<br />
 - [ ] An administrator role could be created. An administrator could update the values of the model<br />
 - [ ] Password reset functionality for when a user forgets their password<br />
