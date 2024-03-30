@@ -1,4 +1,4 @@
-📎 ### Specification document = Määrittelydokumentti = Vaatimusmarittely<br />
+### 📎 Specification document = Määrittelydokumentti = Vaatimusmarittely<br />
 **Purpose of the application**<br />
 The application is designed for (finnish) household owners to estimate their energy consumption and pollution based on the information about their houses and a simple energy model.<br />
 👥 **Users**<br />
