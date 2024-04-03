@@ -3,7 +3,8 @@ from invoke import task
 from subprocess import call
 from sys import platform
 
-root_dir = "'"+os.path.dirname(os.path.abspath(__file__))+"'"
+root_dir_raw = os.path.dirname(os.path.abspath(__file__))
+root_dir = "'"+root_dir_raw+"'"
 
 
 @task
@@ -21,10 +22,10 @@ def test(ctx):
 
 @task
 def coverage(ctx):
-    ctx.run("coverage run --branch -m pytest", pty=True)
+    ctx.run(f"cd {root_dir} && coverage run --branch -m pytest src", pty=True)
 
 @task(coverage)
 def coverage_report(ctx):
-    ctx.run("coverage html", pty=True)
+    ctx.run(f"cd {root_dir} && coverage html", pty=True)
     if platform != "win32":
-        call(("xdg-open", "htmlcov/index.html"))
+        call(("xdg-open", f"{root_dir_raw}/htmlcov/index.html"))
