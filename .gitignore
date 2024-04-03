@@ -3,3 +3,4 @@ learning
 __pycache__
 .coverage
 htmlcov
+architecture.md
