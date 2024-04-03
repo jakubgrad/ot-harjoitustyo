@@ -7,3 +7,4 @@
 | 26.03 | 1       | revise sql |
 | 02.04 | 1       | look at todo app for guidance|
 | 02.04 | 2       | Program the basic structure of the app|
+| 03.04 | 4       | Write first tests, implement basic database service|
