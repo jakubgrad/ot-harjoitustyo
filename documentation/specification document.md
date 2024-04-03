@@ -8,7 +8,7 @@ There could possibly exist an admin group who can change the parameters of the m
 #### UI<br />
 A user is welcomed by login/register buttons. If they click register, they're taken to registration. If they choose login, they are presented with the information about their house. If they haven't created it yet, there will be a "Create new house" button, clicking on which a user is taken to an assessment.<br /><br />
 
-![UI](/documentation/user_interface_draft.png)
+![UI](/documentation/ui.png)
 
 #### 💻 Functionality<br />
 **Before logging in:**<br />
