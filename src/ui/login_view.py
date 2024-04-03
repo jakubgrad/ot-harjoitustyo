@@ -23,7 +23,7 @@ class LoginView:
     
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
-        heading_label = ttk.Label(master=self._root, text="Login")
+        heading_label = ttk.Label(master=self._root, text="Login. Use m as username and password for hardwired user")
 
         username_label = ttk.Label(master=self._root, text="Username")
         self._username_entry = ttk.Entry(master=self._root)
