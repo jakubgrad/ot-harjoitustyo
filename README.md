@@ -10,7 +10,7 @@ The goal of the project is to create an app in which users can log in or registe
 
 
 ## Using the application 
-Run `poetry install`<br/>
+Run `poetry install --no-root` in the command line opened inside the topmost project directory. If you don't have poetry install and use a university computer, you'll likely be prompted if you want to install it. In that case, press <y> and <enter>. Then quit the terminal and open it in the same place. <br/>
 Then run `poetry run invoke init` to initialize the database<br/> 
 The project doesn't yet have a database and instead relies on hardwired user "m" with passsword "m". <br/>
 The project can be started with: `poetry run invoke start`<br/>
