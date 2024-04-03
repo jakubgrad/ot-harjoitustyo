@@ -1,12 +1,4 @@
-# Ohjelmistotekniikka, harjoitustyö <br />
-**Software development, practice work**. A repository for practice work related to the course *[Ohjelmistotekniikka](https://ohjelmistotekniikka-hy.github.io/)* at *[University of Helsinki](https://studies.helsinki.fi/kurssit/opintojakso/otm-fc35db8b-596c-4287-a03c-047e81e1254b)*. 
-
-[💻 Calculators = laskarit](https://github.com/jakubgrad/ot-harjoitustyo/tree/main/laskarit) folder: https://github.com/jakubgrad/ot-harjoitustyo/tree/main/laskarit
-
-[📎 Specification / requierements / marittely / vaatimus document](https://github.com/jakubgrad/ot-harjoitustyo/blob/main/documentation/specification%20document.md)
-
-[🕐 Time keeping =  työaikakirjanpito](https://github.com/jakubgrad/ot-harjoitustyo/blob/main/documentation/time_keeping.md)
-
+# House app
 The goal of the project is to create an app in which users can log in or register and receive their homes' energy consumption and pollution estimates based on filled out assessments. The application was developed using Python 3.11 and using Poetry as a dependency manager<br/>
 
 
