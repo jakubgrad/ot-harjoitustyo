@@ -1,6 +1,10 @@
+import os 
 from invoke import task
 from subprocess import call
 from sys import platform
+
+root_dir = "'"+os.path.dirname(os.path.abspath(__file__))+"'"
+
 
 @task
 def foo(ctx):
@@ -8,7 +12,12 @@ def foo(ctx):
 
 @task
 def start(ctx):
-    ctx.run("python3 src/index.py", pty=True)
+    ctx.run(f"python3 {root_dir}/src/index.py", pty=True)
+
+@task
+def test(ctx):
+    ctx.run(f"pytest {root_dir}/src", pty=True)
+
 
 @task
 def coverage(ctx):
