@@ -20,7 +20,11 @@ The project can be started with: `poetry run invoke start`<br/>
 The project can be tested with: `poetry run invoke test`<br/>
 The coverage report can be created and viewed in HTML: `poetry run invoke coverage-report`. If you get an error similar to this one:
 ```
-[13289:13289:0403/183659.749216:ERROR:process_singleton_posix.cc(353)] The profile appears to be in use by another Google Chrome process (44970) on another computer (vdi-cubic-025.ad.helsinki.fi). Chrome has locked the profile so that it doesn't get corrupted. If you are sure no other processes are using this profile, you can unlock the profile and relaunch Chrome.
+[13289:13289:0403/183659.749216:ERROR:process_singleton_posix.cc(353)] The profile appears to be in use by
+ another Google Chrome process (44970) on another computer (vdi-cubic-025.ad.helsinki.fi).
+Chrome has locked the profile so that it doesn't get corrupted.
+If you are sure no other processes are using this profile,
+you can unlock the profile and relaunch Chrome.
 ```
 You can run  `rm -rf ~/.config/google-chrome/Singleton*` and then try to generate the report again. It should open in your browser. If it doesn't, there is still the possibility of opening it with a browser application directly from the file in html-cov in the topmost directory of the project.<br/>
 Note: the above poetry commands can be run in any project directory thanks to using absolute path of the project in tasks.py<br/>
