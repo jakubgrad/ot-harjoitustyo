@@ -1,9 +1,26 @@
 import unittest
 from services.house_service import HouseService
+from repositories.user_repository import user_repository 
+from repositories.house_repository import house_repository
+
 
 class TestHouseService(unittest.TestCase):
     def setUp(self):
-        print("Set up goes here")
+        self.house_service = HouseService(
+          house_repository, 
+          user_repository
+        )
 
-    def test_hello_world(self):
-        self.assertEqual("Hello world", "Hello world")
+    def test_if_hardwired_user_can_log_in(self):
+        result = self.house_service.login("m","m")
+
+        self.assertEqual(result, True)
+
+    def test_if_nonexistent_user_can_log_in(self):
+        result = self.house_service.login(
+                "notexistingusername",
+                "somepassword"
+        )
+
+        self.assertEqual(result, False)
+
