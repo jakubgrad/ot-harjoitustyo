@@ -19,6 +19,7 @@ The goal of the project is to create an app in which users can log in or registe
 
 ## Using the application 
 Run `poetry install`<br/>
+Then run `poetry run invoke init` to initialize the database<br/> 
 The project doesn't yet have a database and instead relies on hardwired user "m" with passsword "m". <br/>
 The project can be started with: `poetry run invoke start`<br/>
 The project can be tested with: `poetry run invoke test`<br/>

@@ -1,13 +1,10 @@
 import unittest
 from services.house_service import HouseService
 from repositories.user_repository import user_repository 
-from repositories.house_repository import house_repository
-
 
 class TestHouseService(unittest.TestCase):
     def setUp(self):
         self.house_service = HouseService(
-          house_repository, 
           user_repository
         )
 

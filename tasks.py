@@ -14,6 +14,11 @@ def foo(ctx):
 @task
 def start(ctx):
     ctx.run(f"python3 {root_dir}/src/index.py", pty=True)
+    
+@task
+def init(ctx):
+    ctx.run(f"cd {root_dir}/src/db/ && python3 db_setup.py", pty=True)
+
 
 @task
 def test(ctx):
