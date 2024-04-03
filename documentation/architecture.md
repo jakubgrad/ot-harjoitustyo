@@ -1,0 +1,57 @@
+## Architecture
+Heavily inspired by the model [Todo app](https://github.com/ohjelmistotekniikka-hy/python-todo-app/blob/master/dokumentaatio/arkkitehtuuri.md)<br/>
+(missing packaging diagram)<br/>
+
+
+```mermaid
+
+sequenceDiagram
+    actor User
+    participant m as main
+    create participant l as laitehallinto
+    %%m ->> l: HKLLaitehallinto()
+    create participant ri as rautatientori
+    %%m ->> ri: Lataajalaite()
+    create participant ra as ratikka6
+    %%m ->> ra: Lukijalaite()
+    create participant b as bussi244
+    m ->> b: Lukijalaite()
+    m ->> l: lisaa_lataaja(rautatietori)
+    m ->> l: lisaa_lukija(ratikka6)
+    m ->> l: lisaa_lukija(bussi244)
+    create participant lu as lippu_luukku
+    %%m ->> lu : Kioski()
+    m ->>+lu : osta_matkakortti("Kalle")
+    create participant ki as Kallen_Kortti
+    lu ->> ki :  Matkakortti("Kalle")
+    lu -->>-m : 
+    m ->>+ri: lataa_arvoa(kallen_kortti, 3)
+    ri ->>+ki : kasvata_arvoa(3)
+    ki -->>-ri : 
+    ri -->>-m : 
+
+    m ->>+ra : osta_lippu(kallen_kortti, 0)
+    ra ->>+ki : vahenna_arvoa(3)
+    ki -->>-ra : 
+    ra -->>-m : True
+
+
+    m ->>+b : osta_lippu(kallen_kortti, 2)
+    b ->>+ki : 
+    ki -->>-b : 
+    b -->>-m : False
+
+    
+    
+    %%participant l as laitehallinto
+    %%participant J as John
+    
+    %%J->>A: Great!
+    %%A->>J: Hello J, how are you?
+    %%activate J
+    %%J-->>A: Great!
+    %%deactivate J
+    %%A->>+J: Hello J, how are you?
+    %%J-->>-A: Great!
+```
+

@@ -5,4 +5,5 @@
 | 25.03 | 2       | learn about unittesting |
 | 26.03 | 4       | learn about tkinter |
 | 26.03 | 1       | revise sql |
-| 02.04 | 2       | look at todo app for guidance|
+| 02.04 | 1       | look at todo app for guidance|
+| 02.04 | 2       | Program the basic structure of the app|
