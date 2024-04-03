@@ -7,6 +7,14 @@
 
 [🕐 Time keeping =  työaikakirjanpito](https://github.com/jakubgrad/ot-harjoitustyo/blob/main/documentation/time_keeping.md)
 
+The goal of the project is to create an app in which users can log in or register and receive their homes' energy consumption and pollution estimates based on filled out assessments.<br/>
+Python 3.11 was used to develop and test the application.<br/>
+
+## Documentation
+
+
+## Installation 
+Run `poetry install`<br/>
 The project doesn't yet have a database and instead relies on hardwired user "m" with passsword "m". <br/>
 The project can be started with: `poetry run invoke start`<br/>
 The project can be tested with: `poetry run invoke test`<br/>
