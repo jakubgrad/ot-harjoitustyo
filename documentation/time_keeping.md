@@ -8,3 +8,6 @@
 | 02.04 | 1       | look at todo app for guidance|
 | 02.04 | 2       | Program the basic structure of the app|
 | 03.04 | 4       | Write first tests, implement basic database service|
+| 04.04 | 2       | Implement log-in screen|
+| 08.04 | 2       | Implementen working registration and login screen|
+| 08.04 | 2       | Implementen tests for registration and login|
