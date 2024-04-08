@@ -12,12 +12,12 @@ A user is welcomed by login/register buttons. If they click register, they're ta
 
 #### 💻 Functionality<br />
 **Before logging in:**<br />
-- [ ] The user can register in the system<br />
-- [ ] The user can log into the system with existing credentials<br />
+- [x] The user can register in the system<br />
+- [x] The user can log into the system with existing credentials<br />
 - [ ] If the user does not exist, or the password does not match, there is information about it<br />
 
 **After logging in**<br />
-- [ ] The user can complete an assesment of their home.<br />
+- [x] The user can complete an assesment of their home.<br />
 - [ ] Afterwards they can see the information about their home such as pollution generated and consumption of electricity <br />
 
 **Further development ideas**<br />
