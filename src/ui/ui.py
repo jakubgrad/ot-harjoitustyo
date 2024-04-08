@@ -1,7 +1,7 @@
 from tkinter import Tk
-from .hello_view import HelloView
-from .good_bye_view import GoodByeView
-from .login_view import LoginView
+from ui.hello_view import HelloView
+from ui.good_bye_view import GoodByeView
+from ui.login_view import LoginView
 
 class UI:
     def __init__(self, root):
