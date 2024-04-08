@@ -1,6 +1,6 @@
 from tkinter import Tk
-from ui.hello_view import HelloView
-from ui.good_bye_view import GoodByeView
+from ui.registration_view import RegistrationView
+from ui.assessment_view import AssessmentView
 from ui.login_view import LoginView
 
 class UI:
@@ -17,48 +17,48 @@ class UI:
 
         self._current_view = None
 
-    def _handle_good_bye(self):
-        self._show_good_bye_view()
+    def _handle_registration(self):
+        print("UI is handling registration")
+        self._show_registration_view()
 
-    def _handle_hello(self):
-        self._show_hello_view()
+    def _handle_assessment(self):
+        print("UI is handling assessment")
+        self._show_assessment_view()
 
-    def _show_hello_view(self):
-        self._hide_current_view()
-
-        self._current_view = HelloView(
-            self._root,
-            self._handle_good_bye
-        )
-
-        self._current_view.pack()
+    def _handle_login(self):
+        self._show_login_view()
 
     def _show_login_view(self):
         self._hide_current_view()
 
         self._current_view = LoginView(
             self._root,
-            self._handle_good_bye,
-            self._handle_good_bye
+            self._handle_assessment,
+            self._handle_registration
         )
 
-        self._current_view.pack()
 
 
-    def _show_good_bye_view(self):
+    def _show_registration_view(self):
+        print("attempt by UI to show registration view")
         self._hide_current_view()
 
-        self._current_view = GoodByeView(
+        self._current_view = RegistrationView(
             self._root,
-            self._handle_hello
+            self._handle_login
         )
 
-        self._current_view.pack()
+        print("attempt by UI to show registration view finished")
 
-window = Tk()
-window.title("TkInter example")
+    def _show_assessment_view(self):
+        print("attempt by UI to show assessment view")
+        self._hide_current_view()
 
-ui = UI(window)
-ui.start()
+        self._current_view = AssessmentView(
+            self._root,
+            self._handle_login
+        )
 
-window.mainloop()
+        print("attempt by UI to show assessment view finished")
+
+
