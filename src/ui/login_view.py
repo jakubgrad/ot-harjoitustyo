@@ -21,7 +21,7 @@ class LoginView:
         self._frame = ttk.Frame(master=self._root)
         self._frame.grid(row=0, column=0)  # Grid the frame within the root widget
 
-        heading_label = ttk.Label(master=self._frame, text="Login. Use m as username and password for hardwired user")
+        heading_label = ttk.Label(master=self._frame, text="Log in")
 
         username_label = ttk.Label(master=self._frame, text="Username")
         self._username_entry = ttk.Entry(master=self._frame)
