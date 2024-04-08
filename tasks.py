@@ -6,24 +6,17 @@ from sys import platform
 root_dir_raw = os.path.dirname(os.path.abspath(__file__))
 root_dir = "'"+root_dir_raw+"'"
 
-
-@task
-def foo(ctx):
-    print("bar")
-
 @task
 def start(ctx):
     ctx.run(f"python3 {root_dir}/src/index.py", pty=True)
     
 @task
 def init(ctx):
-    ctx.run(f"cd {root_dir}/src/db/ && python3 db_setup.py", pty=True)
-
+    ctx.run(f"cd {root_dir}/ && python3 src/initialize_database.py", pty=True)
 
 @task
 def test(ctx):
     ctx.run(f"pytest {root_dir}/src", pty=True)
-
 
 @task
 def coverage(ctx):
