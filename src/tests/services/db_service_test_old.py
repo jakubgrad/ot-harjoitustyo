@@ -2,6 +2,7 @@ import unittest
 import os
 from services.db_service import DbService
 
+
 class TestDbService(unittest.TestCase):
     def setUp(self):
         self.db_service = DbService()
