@@ -1,7 +1,9 @@
 from database_connection import get_database_connection
 
+
 class UserRepository():
-    def __init__(self, connection):#,user):. The class should take user entity as injected dependency
+    # ,user):. The class should take user entity as injected dependency
+    def __init__(self, connection):
         self._connection = connection
 
     def login(self, username, password):
@@ -10,35 +12,37 @@ class UserRepository():
             return False
 
         cursor = self._connection.cursor()
-        data = (username,password)
+        data = (username, password)
         print("User attempts to log in")
 
         cursor.execute('''
             SELECT 
-                username
+                id,username
             FROM
                 users
             WHERE
                 username=? 
             AND
                 password=?
-        ''',data)
+        ''', data)
 
         result = cursor.fetchone()
 
         print(f"result: {result}")
+        print(f"id of the user: {result['id']}")
+        user_id = result['id']
         if result:
-            return True
+            return user_id
         else:
             return False
-               
+
     def register(self, username, password):
         if self.check_if_username_exists(username):
             print("Username taken")
             return False
-        
+
         cursor = self._connection.cursor()
-        data = (username,password)
+        data = (username, password)
         print("User being created")
         cursor.execute('''
             INSERT INTO users(
@@ -46,11 +50,10 @@ class UserRepository():
                 password)
             VALUES
                 (?,?)
-        ''',data)
+        ''', data)
         self._connection.commit()
         print("User created")
         return True
-
 
     def check_if_username_exists(self, username):
         cursor = self._connection.cursor()
@@ -67,5 +70,6 @@ class UserRepository():
             return True
         else:
             return False
+
 
 user_repository = UserRepository(get_database_connection())
