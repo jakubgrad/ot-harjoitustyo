@@ -6,3 +6,4 @@ __pycache__
 htmlcov
 architecture.md
 data/app.db
+data/test_app.db
