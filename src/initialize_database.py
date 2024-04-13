@@ -1,5 +1,6 @@
 from database_connection import get_database_connection
 
+
 def drop_tables(connection):
     cursor = connection.cursor()
 
@@ -11,13 +12,11 @@ def drop_tables(connection):
         drop table if exists houses;
     ''')
 
-
     connection.commit()
 
 
 def create_tables(connection):
     cursor = connection.cursor()
-
 
     cursor.execute('''
         CREATE TABLE users (
@@ -29,7 +28,7 @@ def create_tables(connection):
 
     cursor.execute('''
         CREATE TABLE houses ( 
-            id INTEGER, 
+            id INTEGER PRIMARY KEY,
             user_id INTEGER,
             parameters TEXT, 
             FOREIGN KEY(user_id) REFERENCES users(id)   
