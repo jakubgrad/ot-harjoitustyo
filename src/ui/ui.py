@@ -2,6 +2,8 @@ from tkinter import Tk
 from ui.registration_view import RegistrationView
 from ui.assessment_view import AssessmentView
 from ui.login_view import LoginView
+from ui.house_view import HouseView
+
 
 class UI:
     def __init__(self, root):
@@ -21,9 +23,13 @@ class UI:
         print("UI is handling registration")
         self._show_registration_view()
 
-    def _handle_assessment(self):
-        print("UI is handling assessment")
-        self._show_assessment_view()
+    def _handle_assessment(self,user_id):
+        print("UI is handling assessment for user {user_id}")
+        self._show_assessment_view(user_id)
+
+    def _handle_house(self,user_id):
+        print("UI is handling house view for user {user_id}")
+        self._show_house_view(user_id)
 
     def _handle_login(self):
         self._show_login_view()
@@ -37,8 +43,6 @@ class UI:
             self._handle_registration
         )
 
-
-
     def _show_registration_view(self):
         print("attempt by UI to show registration view")
         self._hide_current_view()
@@ -50,15 +54,28 @@ class UI:
 
         print("attempt by UI to show registration view finished")
 
-    def _show_assessment_view(self):
+    def _show_assessment_view(self, user_id):
         print("attempt by UI to show assessment view")
         self._hide_current_view()
 
         self._current_view = AssessmentView(
             self._root,
-            self._handle_login
+            self._handle_login,
+            self._handle_house,
+            user_id
         )
 
         print("attempt by UI to show assessment view finished")
 
+    def _show_house_view(self, user_id):
+        print("attempt by UI to show house view")
+        self._hide_current_view()
 
+        self._current_view = HouseView(
+            self._root,
+            self._handle_login,
+            self._handle_assessment,
+            user_id
+        )
+
+        print("attempt by UI to show  view finished")
