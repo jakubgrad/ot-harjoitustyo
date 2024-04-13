@@ -19,6 +19,7 @@ A user is welcomed by login/register buttons. If they click register, they're ta
 **After logging in**<br />
 - [x] The user can complete an assesment of their home.<br />
 - [x] Afterwards they can see the information about their home such as pollution generated and consumption of electricity <br />
+- [x] A user can update the information about their home <br />
 
 **Further development ideas**<br />
 - [ ] An administrator role could be created. An administrator could update the values of the model and update the values for users<br />
