@@ -19,8 +19,20 @@ def test(ctx):
     ctx.run(f"pytest {root_dir}/src", pty=True)
 
 @task
+def format(ctx):
+    ctx.run(f"cd {root_dir}/ && autopep8 --in-place --recursive src", pty=True)
+    
+@task
+def lint(ctx):
+    ctx.run(f"cd {root_dir} && pylint src", pty=True)
+
+@task
 def coverage(ctx):
     ctx.run(f"cd {root_dir} && coverage run --branch -m pytest src", pty=True)
+
+@task
+def db(ctx):
+    ctx.run(f"cd {root_dir} && sqlite3 data/app.db", pty=True)
 
 @task(coverage)
 def coverage_report(ctx):
