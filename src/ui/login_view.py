@@ -4,10 +4,11 @@ from services.house_service import house_service
 
 
 class LoginView:
-    def __init__(self, root, handle_assessment, handle_registration):
+    def __init__(self, root, handle_assessment,handle_house, handle_registration):
         self._root = root
         self._handle_registration = handle_registration
         self._handle_assessment = handle_assessment
+        self._handle_house = handle_house
         self._frame = None
         self._username_entry = None
         self._password_entry = None
@@ -62,40 +63,17 @@ class LoginView:
         username_entry = self._username_entry.get()
         password_entry = self._password_entry.get()
         print(f"Attempt at logging in: {username_entry}")
-        user_id = house_service.login(username_entry, password_entry)
-        if user_id:
-            self._handle_assessment(user_id)
+        user = house_service.login(username_entry, password_entry)
+        print("handle login inside login view retrieved")
+        print(f"user with params: id:{user.id},username:{user.username}")
+        if user:
+            if house_service.get_users_house(user.id):
+                #user has a house already
+                self._handle_house(user)
+            else:
+                self._handle_assessment(user)
 
     def _handle_registration_click(self):
         print("handling registration click by login view")
         self._handle_registration()
 
-
-'''
-def start(self):
-    heading_label = ttk.Label(master=self._root, text="Login")
-
-    username_label = ttk.Label(master=self._root, text="Username")
-    username_entry = ttk.Entry(master=self._root)
-
-    password_label = ttk.Label(master=self._root, text="Password")
-    password_entry = ttk.Entry(master=self._root)
-
-    button = ttk.Button(master=self._root, text="Button")
-
-    # vasempaan laitaan
-    heading_label.grid(row=0, column=0, columnspan=2, sticky=constants.W)
-
-    username_label.grid(row=1, column=0)
-    # vasempaan ja oikeaan laitaan
-    username_entry.grid(row=1, column=1, sticky=(constants.E, constants.W))
-
-    password_label.grid(row=2, column=0)
-    # vasempaan ja oikeaan laitaan
-    password_entry.grid(row=2, column=1, sticky=(constants.E, constants.W))
-
-    # vasempaan ja oikeaan laitaan
-    button.grid(row=3, column=0, columnspan=2, sticky=(constants.E, constants.W))
-
-    self._root.grid_columnconfigure(1, weight=1)
-'''

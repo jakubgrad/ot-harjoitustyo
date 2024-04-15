@@ -23,13 +23,13 @@ class UI:
         print("UI is handling registration")
         self._show_registration_view()
 
-    def _handle_assessment(self, user_id):
-        print("UI is handling assessment for user {user_id}")
-        self._show_assessment_view(user_id)
+    def _handle_assessment(self, user):
+        print("UI is handling assessment for user {user}")
+        self._show_assessment_view(user)
 
-    def _handle_house(self, user_id):
+    def _handle_house(self, user):
         print("UI is handling house view for user {user_id}")
-        self._show_house_view(user_id)
+        self._show_house_view(user)
 
     def _handle_login(self):
         self._show_login_view()
@@ -40,6 +40,7 @@ class UI:
         self._current_view = LoginView(
             self._root,
             self._handle_assessment,
+            self._handle_house,
             self._handle_registration
         )
 
@@ -54,7 +55,7 @@ class UI:
 
         print("attempt by UI to show registration view finished")
 
-    def _show_assessment_view(self, user_id):
+    def _show_assessment_view(self, user):
         print("attempt by UI to show assessment view")
         self._hide_current_view()
 
@@ -62,7 +63,7 @@ class UI:
             self._root,
             self._handle_login,
             self._handle_house,
-            user_id
+            user
         )
 
         print("attempt by UI to show assessment view finished")

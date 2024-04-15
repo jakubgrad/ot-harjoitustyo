@@ -3,12 +3,14 @@ from services.house_service import house_service
 
 
 class HouseView:
-    def __init__(self, root, handle_login, handle_assessment, user_id):
+    def __init__(self, root, handle_login, handle_assessment, user):#user_id):
         self._root = root
         self._handle_login = handle_login
         self._handle_assessment = handle_assessment
-        self._user_id = user_id
-        self._house_id = house_service.get_users_house_id(user_id)
+        self._user_id = user.id
+        self.user = user
+        self._house_id = house_service.get_users_house_id(user.id)
+        self._house = house_service.get_users_house(user.id)
         self._frame = None
         self._house_age_entry = None
         self._type_of_heating_entry = None
@@ -27,19 +29,20 @@ class HouseView:
             master=self._frame, text="Check out the consumption of your home!")
 
         consumption_estimate = house_service.get_energy_consumption(
-            self._house_id)
+            self._house.id)
 
         consumption_label = ttk.Label(
             master=self._frame, text="Yearly energy consumption:"+str(consumption_estimate))
         self._house_age_entry = ttk.Entry(master=self._frame)
 
-        pollution_estimate = house_service.get_pollution(self._house_id)
+        pollution_estimate = house_service.get_pollution(self._house.id)
 
         pollution_label = ttk.Label(
             master=self._frame, text="House pollution: " + str(pollution_estimate))
 
         user_id_label = ttk.Label(
-            master=self._frame, text="User_id: " + str(self._user_id))
+            master=self._frame, text="User_id: " + str(self.user.id)+
+                ", Username: "+str(self.user.username) )
 
         update_button = ttk.Button(
             master=self._frame,
@@ -77,7 +80,7 @@ class HouseView:
         self._handle_login()
 
     def _handle_assessment_click(self):
-        self._handle_assessment(self._user_id)
+        self._handle_assessment(self.user)
 
     def _update_click(self):
         house_age = self._house_age_entry.get()

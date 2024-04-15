@@ -15,13 +15,16 @@ class HouseService():
         return False
 
     def login(self, username_entry, password_entry):
-        user_id = self._user_repository.login(username_entry, password_entry)
-        if user_id:
-            return user_id
+        user = self._user_repository.login(username_entry, password_entry)
+        if user:
+            return user
         return False
 
     def get_users_house_id(self, user_id):
         return self._house_repository.get_users_house_id(user_id)
+
+    def get_users_house(self, user_id):
+        return self._house_repository.get_users_house(user_id)
 
     def update_house(self, user_id, new_parameters):
         print("houes service is trying to update the house")
@@ -31,13 +34,13 @@ class HouseService():
             return 
         self._house_repository.create_house(user_id, new_parameters)
 
-    def get_energy_consumption(self, user_id):
-        house_id = self._house_repository.get_users_house_id(user_id)
+    def get_energy_consumption(self, house_id):
+        #house_id = self._house_repository.get_users_house_id(user_id)
         result = self._house_repository.calculate_energy_consumption(house_id)
         return result
 
-    def get_pollution(self, user_id):
-        house_id = self._house_repository.get_users_house_id(user_id)
+    def get_pollution(self, house_id):
+        #house_id = self._house_repository.get_users_house_id(user_id)
         result = self._house_repository.calculate_pollution(house_id)
         return result
 

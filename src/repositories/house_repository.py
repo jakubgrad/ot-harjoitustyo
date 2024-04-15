@@ -1,4 +1,5 @@
 from database_connection import get_database_connection
+from entities.house import House
 
 
 class HouseRepository():
@@ -30,6 +31,9 @@ class HouseRepository():
         except ValueError:
             param1 = 0
             param2 = 0
+        except AttributeError:
+            param1 = 0
+            param2 = 0
         return param1*param2+param1+param2
 
     def calculate_energy_consumption(self, house_id):
@@ -43,6 +47,10 @@ class HouseRepository():
         except ValueError:
             param1 = 0
             param2 = 0
+        except AttributeError:
+            param1 = 0
+            param2 = 0
+
         return param1*param2+param1+param2
 
     def update_house(self, house_id, new_parameters):
@@ -73,10 +81,30 @@ class HouseRepository():
             return result['id']
         return False
 
-    def fetch_house_parameters(self, user_id):
-        if not self.get_users_house_id(user_id):
-            print(f"{user_id} doesn't have a house, cannot fetch")
-            return False
+    def get_users_house(self, user_id):
+        cursor = self._connection.cursor()
+
+        cursor.execute('''
+            SELECT id,parameters
+            FROM houses 
+            WHERE user_id=?
+        ''', (user_id,))
+
+        result = cursor.fetchone()
+
+        if result:
+            id = result['id']
+            parameters = result['parameters']
+            print("Inside get_user_house")
+            print(f"id:{id}")
+            print(f"parameters:{parameters}")
+            return House(id,parameters)
+        return False
+
+    def fetch_house_parameters(self, house_id):
+        #if not self.get_users_house_id(user_id):
+        #    print(f"{user_id} doesn't have a house, cannot fetch")
+        #    return False
 
         cursor = self._connection.cursor()
 
@@ -86,8 +114,8 @@ class HouseRepository():
             FROM
                 houses
             WHERE
-                user_id=? 
-        ''', (user_id,))
+                id=? 
+        ''', (house_id,))
 
         result = cursor.fetchone()
 

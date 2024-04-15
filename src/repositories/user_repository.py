@@ -1,4 +1,5 @@
 from database_connection import get_database_connection
+from entities.user import User
 
 
 class UserRepository():
@@ -28,11 +29,15 @@ class UserRepository():
 
         result = cursor.fetchone()
 
-        print(f"result: {result}")
-        print(f"id of the user: {result['id']}")
-        user_id = result['id']
+        print(f"result of login query: {result}")
+
+        id = result['id']
+        username = result['username']
+        print(f"User object:")
+        print(f"id:{id},username:{username}")
+        user = User(id, username)
         if result:
-            return user_id
+            return user
         return False
 
     def register(self, username, password):
