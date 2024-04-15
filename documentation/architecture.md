@@ -1,5 +1,5 @@
 Packaging diagram:<br/>
-[Packaging diagram image](/documentation/pictures/:package_diagram.drawio.png)
+[Packaging diagram image](/documentation/pictures/package_diagram.drawio.png)
 
 Class diagram:<br/>
 ```mermaid
