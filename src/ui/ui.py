@@ -23,11 +23,11 @@ class UI:
         print("UI is handling registration")
         self._show_registration_view()
 
-    def _handle_assessment(self,user_id):
+    def _handle_assessment(self, user_id):
         print("UI is handling assessment for user {user_id}")
         self._show_assessment_view(user_id)
 
-    def _handle_house(self,user_id):
+    def _handle_house(self, user_id):
         print("UI is handling house view for user {user_id}")
         self._show_house_view(user_id)
 

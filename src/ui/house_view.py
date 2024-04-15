@@ -1,13 +1,14 @@
 from tkinter import ttk, constants
 from services.house_service import house_service
 
+
 class HouseView:
     def __init__(self, root, handle_login, handle_assessment, user_id):
         self._root = root
         self._handle_login = handle_login
         self._handle_assessment = handle_assessment
         self._user_id = user_id
-        self._house_id =  house_service.get_users_house_id(user_id)
+        self._house_id = house_service.get_users_house_id(user_id)
         self._frame = None
         self._house_age_entry = None
         self._type_of_heating_entry = None
@@ -25,9 +26,11 @@ class HouseView:
         heading_label = ttk.Label(
             master=self._frame, text="Check out the consumption of your home!")
 
-        consumption_estimate = house_service.get_energy_consumption(self._house_id)
+        consumption_estimate = house_service.get_energy_consumption(
+            self._house_id)
 
-        consumption_label = ttk.Label(master=self._frame, text="Yearly energy consumption:"+str(consumption_estimate) )
+        consumption_label = ttk.Label(
+            master=self._frame, text="Yearly energy consumption:"+str(consumption_estimate))
         self._house_age_entry = ttk.Entry(master=self._frame)
 
         pollution_estimate = house_service.get_pollution(self._house_id)
@@ -56,15 +59,15 @@ class HouseView:
 
         heading_label.grid(row=0, column=0, columnspan=2,
                            sticky=constants.W, padx=5, pady=5)
-        consumption_label.grid(row=1, column=0,columnspan=2, padx=5, pady=5)
+        consumption_label.grid(row=1, column=0, columnspan=2, padx=5, pady=5)
         pollution_label.grid(row=2, column=0, padx=5, pady=5)
-        #update_button.grid(row=3, column=0, columnspan=2, sticky=(
+        # update_button.grid(row=3, column=0, columnspan=2, sticky=(
         #    constants.E, constants.W), padx=5, pady=5)
         assessment_button.grid(row=4, column=0, columnspan=2, sticky=(
             constants.E, constants.W), padx=5, pady=5)
         logout_button.grid(row=5, column=0, columnspan=2, sticky=(
             constants.E, constants.W), padx=5, pady=5)
-        user_id_label.grid(row=6, column=0,columnspan=2, padx=5, pady=5)
+        user_id_label.grid(row=6, column=0, columnspan=2, padx=5, pady=5)
         pollution_label.grid(row=2, column=0, padx=5, pady=5)
 
         # Adjust column configuration for root widget

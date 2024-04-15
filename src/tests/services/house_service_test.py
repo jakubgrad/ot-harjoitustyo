@@ -33,4 +33,3 @@ class TestHouseService(unittest.TestCase):
     def test_login_with_nonexisting_username_works(self):
         result = self.house_service.login("non_existing_user", "pass")
         self.assertEqual(result, False)
-

@@ -33,8 +33,7 @@ class UserRepository():
         user_id = result['id']
         if result:
             return user_id
-        else:
-            return False
+        return False
 
     def register(self, username, password):
         if self.check_if_username_exists(username):
@@ -68,8 +67,7 @@ class UserRepository():
         print(f"result: {result}")
         if result:
             return True
-        else:
-            return False
+        return False
 
 
 user_repository = UserRepository(get_database_connection())

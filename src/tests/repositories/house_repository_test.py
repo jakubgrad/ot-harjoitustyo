@@ -28,14 +28,14 @@ class TestHouseRepository(unittest.TestCase):
     def test_a_new_user_doesnt_have_a_house(self):
         user_id = 1234
         result = house_repository.get_users_house_id(user_id)
-        self.assertEqual(result,False)
+        self.assertEqual(result, False)
 
     def test_an_existing_user_can_get_a_house(self):
-        user_id = 5 
-        house_repository.create_house(user_id,"sample_parameters")
+        user_id = 5
+        house_repository.create_house(user_id, "sample_parameters")
         has_house = house_repository.get_users_house_id(user_id)
 
-        self.assertNotEqual(has_house,False)
+        self.assertNotEqual(has_house, False)
 
     def test_a_house_can_be_created_and_fetched(self):
         user_id = 100
@@ -48,7 +48,7 @@ class TestHouseRepository(unittest.TestCase):
         user_id = 100
         house_repository.create_house(user_id, "sample_parameters")
         house_id = house_repository.get_users_house_id(user_id)
-        house_repository.update_house(house_id,"new_parameters")
+        house_repository.update_house(house_id, "new_parameters")
         parameters = house_repository.fetch_house_parameters(user_id)
 
         self.assertEqual(parameters, "new_parameters")
@@ -65,7 +65,4 @@ class TestHouseRepository(unittest.TestCase):
 
         self.assertIsInstance(result, (int, float))
 
-
-
-
-    #def test_a_house_can_be_created_by_a_registered_user(self):
+    # def test_a_house_can_be_created_by_a_registered_user(self):
