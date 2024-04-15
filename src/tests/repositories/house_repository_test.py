@@ -40,7 +40,8 @@ class TestHouseRepository(unittest.TestCase):
     def test_a_house_can_be_created_and_fetched(self):
         user_id = 100
         house_repository.create_house(user_id, "sample_parameters")
-        parameters = house_repository.fetch_house_parameters(user_id)
+        house_id = house_repository.get_users_house_id(user_id)
+        parameters = house_repository.fetch_house_parameters(house_id)
 
         self.assertEqual(parameters, "sample_parameters")
 
@@ -49,7 +50,7 @@ class TestHouseRepository(unittest.TestCase):
         house_repository.create_house(user_id, "sample_parameters")
         house_id = house_repository.get_users_house_id(user_id)
         house_repository.update_house(house_id, "new_parameters")
-        parameters = house_repository.fetch_house_parameters(user_id)
+        parameters = house_repository.fetch_house_parameters(house_id)
 
         self.assertEqual(parameters, "new_parameters")
 
