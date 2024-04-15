@@ -10,15 +10,17 @@ The goal of the project is to create an app in which users can log in or registe
 
 
 ## Using the application 
-Clone the repository:<br/>
-`git clone https://github.com/jakubgrad/ot-harjoitustyo.git`<br/>
-`cd ot-harjoitustyo`<br/>
-Run `poetry install --no-root` in the command line opened inside the topmost project directory. If you don't have poetry install and use a university computer, you'll likely be prompted if you want to install it. In that case, press <y> and <enter>. Then quit the terminal and open it in the same place. <br/>
+Clone the repository and enter topmost directory:<br/>
+```
+git clone https://github.com/jakubgrad/ot-harjoitustyo.git
+cd ot-harjoitustyo
+```
+Run `poetry install --no-root` in the command line opened inside the topmost project directory. If you don't have poetry installed and use a university computer, you'll likely be prompted if you want to install it. In that case, press <y> and <enter>. Then quit the terminal and open it in the same place so that the shell recognizes newly installed poetry <br/>
 Then run `poetry run invoke init` to initialize the database. According to course materials:<br/> <br/>
 "NOTE: If you are running an application using a SQLite database in a virtual desktop, 
 you may encounter the error `database is locked`. [This guide](https://ohjelmistotekniikka-hy.github.io/python/toteutus#sqlite-tietokanta-lukkiutuminen-virtuaality%C3%B6asemalla) will probably solve the problem"<br /><br/>
-The project doesn't yet have a database and instead relies on hardwired user "m" with passsword "m". <br/>
-The project can be started with: `poetry run invoke start`<br/>
+
+The project can be started with: `poetry run invoke start`<br/>, preferably run in the topmost directory of the project.
 The project can be tested with: `poetry run invoke test`<br/>
 The coverage report can be created and viewed in HTML: `poetry run invoke coverage-report`. If you get an error similar to this one:
 ```
@@ -29,6 +31,6 @@ If you are sure no other processes are using this profile,
 you can unlock the profile and relaunch Chrome.
 ```
 You can run  `rm -rf ~/.config/google-chrome/Singleton*` and then try to generate the report again. It should open in your browser. If it doesn't, there is still the possibility of opening it with a browser application directly from the file in html-cov in the topmost directory of the project.<br/>
-Note: the above `poetry` commands can be run in any project directory thanks to using absolute path of the project in `tasks.py`<br/>
+Note: in principle the above `poetry` commands can be run in any project directory thanks to using absolute path of the project in `tasks.py`, but the app was only tested by running commands in the topmost directory<br/>
 
 
