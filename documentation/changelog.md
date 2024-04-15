@@ -7,3 +7,10 @@
 - Log in screen added 
 - Registration and login UI and backend finished and tested
 - Started on assessment UI
+
+## Week 4 
+- Developed user and house repositories
+- Added linting and autoformatting tasks
+- Added functionality to create and update house assessment
+- Added house view to UI
+- Added tests for testing house repository

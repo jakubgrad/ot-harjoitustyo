@@ -9,5 +9,9 @@
 | 02.04 | 2       | Program the basic structure of the app|
 | 03.04 | 4       | Write first tests, implement basic database service|
 | 04.04 | 2       | Implement log-in screen|
-| 08.04 | 2       | Implementen working registration and login screen|
-| 08.04 | 2       | Implementen tests for registration and login|
+| 08.04 | 2       | Implemented working registration and login screen|
+| 08.04 | 2       | Implemented tests for registration and login|
+| 13.04 | 5       | Developed user and house repositories, |
+|       |         | and wrote tests for these, added house view |
+| 14.04 | 4       | Created package/class diagrams |
+|       |         | Incorporated user and house entities |
