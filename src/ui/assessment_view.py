@@ -1,4 +1,5 @@
 from tkinter import ttk, constants
+import tkinter as tk
 from services.house_service import house_service
 
 
@@ -33,15 +34,17 @@ class AssessmentView:
             master=self._frame, text="Type of heating 1-9")
         self._type_of_heating_entry = ttk.Entry(master=self._frame)
 
-        update_button = ttk.Button(
+        update_button = tk.Button(
             master=self._frame,
             text="Update",
-            command=lambda: self._update_click()
+            command=lambda: self._update_click(),
+            bg="#808000", fg="#ffffff"
         )
-        logout_button = ttk.Button(
+        logout_button = tk.Button(
             master=self._frame,
             text="Logout",
-            command=lambda: self._handle_logout_click()
+            command=lambda: self._handle_logout_click(),
+            bg="#ff8c00", fg="#ffffff"
         )
 
         heading_label.grid(row=0, column=0, columnspan=2,

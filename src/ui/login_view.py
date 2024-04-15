@@ -1,4 +1,5 @@
 from tkinter import ttk, constants
+import tkinter as tk
 # from repositories.user_repository import user_repository
 from services.house_service import house_service
 
@@ -32,15 +33,17 @@ class LoginView:
         password_label = ttk.Label(master=self._frame, text="Password")
         self._password_entry = ttk.Entry(master=self._frame)
 
-        login_button = ttk.Button(
+        login_button = tk.Button(
             master=self._frame,
             text="Login",
-            command=lambda: self._handle_login_click()
+            command=lambda: self._handle_login_click(),
+            bg="#ff8c00", fg="#ffffff"
         )
-        registration_button = ttk.Button(
+        registration_button = tk.Button(
             master=self._frame,
             text="Registration",
-            command=lambda: self._handle_registration_click()
+            command=lambda: self._handle_registration_click(),
+            bg="#000080", fg="#ffffff"
         )
 
         heading_label.grid(row=0, column=0, columnspan=2,
