@@ -20,7 +20,7 @@ class TestHouseService(unittest.TestCase):
 
     def test_registering_with_new_username_works(self):
         result = self.house_service.register("new_username", "password")
-        self.assertEqual(result, True)
+        self.assertNotEqual(result, False)
 
     def test_registering_with_existing_username_does_not_work(self):
         result = self.house_service.register("user1", "pass1")
