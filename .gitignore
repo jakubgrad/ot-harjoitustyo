@@ -4,6 +4,5 @@ house_app.db
 __pycache__
 .coverage
 htmlcov
-architecture.md
 data/app.db
 data/test_app.db
