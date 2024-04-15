@@ -14,4 +14,5 @@
 | 13.04 | 5       | Developed user and house repositories, |
 |       |         | and wrote tests for these, added house view |
 | 14.04 | 4       | Created package/class diagrams |
-|       |         | Incorporated user and house entities |
+| 15.04 | 4       | Incorporated user and house entities, |
+|       |         | created class and packaging diagrams |

@@ -14,3 +14,4 @@
 - Added functionality to create and update house assessment
 - Added house view to UI
 - Added tests for testing house repository
+- Incorporated User and House entities into the code
