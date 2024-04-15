@@ -40,6 +40,10 @@ The coverage report can be created and viewed in HTML:
 ```
 poetry run invoke coverage-report
 ```
+You can see linting errors of the project with: 
+```
+poetry run invoke lint
+```
 If you get an error similar to this one:
 ```
 [13289:13289:0403/183659.749216:ERROR:process_singleton_posix.cc(353)] The profile appears to be in use by
@@ -50,5 +54,6 @@ you can unlock the profile and relaunch Chrome.
 ```
 You can run  `rm -rf ~/.config/google-chrome/Singleton*` and then try to generate the report again. It should open in your browser. If it doesn't, there is still the possibility of opening it with a browser application directly from the file in html-cov in the topmost directory of the project.<br/>
 Note: in principle the above `poetry` commands can be run in any project directory thanks to using absolute path of the project in `tasks.py`, but the app was only tested by running commands in the topmost directory<br/>
+
 
 
