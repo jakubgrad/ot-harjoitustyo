@@ -11,7 +11,7 @@ class HouseService():
 
     def register(self, username_entry, password_entry):
         if self._user_repository.register(username_entry, password_entry):
-            return True
+            return self.login(username_entry,password_entry)
         return False
 
     def login(self, username_entry, password_entry):

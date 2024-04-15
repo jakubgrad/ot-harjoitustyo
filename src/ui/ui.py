@@ -50,7 +50,8 @@ class UI:
 
         self._current_view = RegistrationView(
             self._root,
-            self._handle_login
+            self._handle_login,
+            self._handle_assessment
         )
 
         print("attempt by UI to show registration view finished")

@@ -4,9 +4,10 @@ from services.house_service import house_service
 
 
 class RegistrationView:
-    def __init__(self, root, handle_login):
+    def __init__(self, root, handle_login, handle_assessment):
         self._root = root
         self._handle_login = handle_login
+        self._handle_assessment = handle_assessment
         self._frame = None
         self._username_entry = None
         self._password_entry = None
@@ -65,6 +66,7 @@ class RegistrationView:
         username_entry = self._username_entry.get()
         password_entry = self._password_entry.get()
         print(f"Attempt at registering for: {username_entry}")
-        result = house_service.register(username_entry, password_entry)
-        if result:
-            self._handle_login()
+        user = house_service.register(username_entry, password_entry)
+        if user:
+            self._handle_assessment(user)
+            #self._handle_login()
