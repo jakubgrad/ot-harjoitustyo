@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net" modified="2024-04-15T10:38:05.804Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="fdh30E0357ZsYjSdhxDX" version="24.2.5" type="device">
+  <diagram name="Strona-1" id="YqnvOHPVxNNE6JF-Ykw-">
+    <mxGraphModel dx="1420" dy="777" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9e3RXgVKlqdb7sLtlXSX-1" value="ui" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="210" y="340" width="70" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="9e3RXgVKlqdb7sLtlXSX-2" value="services" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="190" y="410" width="70" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="9e3RXgVKlqdb7sLtlXSX-4" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=55;entryDy=14;entryPerimeter=0;" parent="1" source="9e3RXgVKlqdb7sLtlXSX-1" target="9e3RXgVKlqdb7sLtlXSX-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="430" as="sourcePoint" />
+            <mxPoint x="245" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xeRmUom2onkOi6z3Qva0-4" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=55;entryDy=14;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="224.76" y="460" as="sourcePoint" />
+            <mxPoint x="224.76" y="494" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xeRmUom2onkOi6z3Qva0-5" value="repositories" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="170" y="480" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="xeRmUom2onkOi6z3Qva0-6" value="entities" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="150" y="550" width="70" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="xeRmUom2onkOi6z3Qva0-7" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;exitX=0.392;exitY=0.999;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=55;entryDy=14;entryPerimeter=0;" parent="1" source="xeRmUom2onkOi6z3Qva0-5" target="xeRmUom2onkOi6z3Qva0-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="340" y="570" as="sourcePoint" />
+            <mxPoint x="205" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
