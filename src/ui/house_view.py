@@ -8,10 +8,10 @@ class HouseView:
         self._root = root
         self._handle_login = handle_login
         self._handle_assessment = handle_assessment
-        self._user_id = user.id
+        self._user_id = user._id
         self.user = user
-        self._house_id = house_service.get_users_house_id(user.id)
-        self._house = house_service.get_users_house(user.id)
+        self._house_id = house_service.get_users_house_id(user._id)
+        self._house = house_service.get_users_house(user._id)
         self._frame = None
         self._house_age_entry = None
         self._type_of_heating_entry = None
@@ -30,19 +30,19 @@ class HouseView:
             master=self._frame, text="Check out the consumption of your home!")
 
         consumption_estimate = house_service.get_energy_consumption(
-            self._house.id)
+            self._house._id)
 
         consumption_label = ttk.Label(
             master=self._frame, text="Yearly energy consumption:"+str(consumption_estimate))
         self._house_age_entry = ttk.Entry(master=self._frame)
 
-        pollution_estimate = house_service.get_pollution(self._house.id)
+        pollution_estimate = house_service.get_pollution(self._house._id)
 
         pollution_label = ttk.Label(
             master=self._frame, text="House pollution: " + str(pollution_estimate))
 
         user_id_label = ttk.Label(
-            master=self._frame, text="User_id: " + str(self.user.id)+
+            master=self._frame, text="user._id: " + str(self.user._id)+
                 ", Username: "+str(self.user.username) )
 
         update_button = ttk.Button(

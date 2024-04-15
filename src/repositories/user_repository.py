@@ -31,11 +31,11 @@ class UserRepository():
 
         print(f"result of login query: {result}")
 
-        id = result['id']
+        user_id = result['id']
         username = result['username']
-        print(f"User object:")
-        print(f"id:{id},username:{username}")
-        user = User(id, username)
+        print("User object:")
+        print(f"user_user_id:{id},username:{username}")
+        user = User(user_id, username)
         if result:
             return user
         return False

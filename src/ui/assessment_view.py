@@ -11,8 +11,8 @@ class AssessmentView:
         self._frame = None
         self._house_age_entry = None
         self._type_of_heating_entry = None
-        self._user_id = user.id
-        self.user = user
+        self._user_id = user._id
+        self._user = user
 
         self._initialize()
 
@@ -74,11 +74,11 @@ class AssessmentView:
 
         print(f"house age:{house_age}")
         print(f"type of heating:{type_of_heating_entry}")
-        print(f"_user_id:{self._user_id}")
-        #house_id = house_service.get_users_house_id(self._user_id)
+        print(f"_user._id:{self._user._id}")
+        #house_id = house_service.get_users_house_id(self._user._id)
         #print(f"house_id found in UI:{house_id}")
-        house_service.update_house(self._user_id, new_parameters)
+        house_service.update_house(self._user._id, new_parameters)
 
-        self._handle_house(self.user)
+        self._handle_house(self._user)
 
-        # self, root, handle_login, handle_assessment, user_id):
+        # self, root, handle_login, handle_assessment, user._id):

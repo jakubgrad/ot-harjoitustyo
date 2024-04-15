@@ -68,9 +68,9 @@ class LoginView:
         print(f"Attempt at logging in: {username_entry}")
         user = house_service.login(username_entry, password_entry)
         print("handle login inside login view retrieved")
-        print(f"user with params: id:{user.id},username:{user.username}")
+        print(f"user with params: id:{user._id},username:{user.username}")
         if user:
-            if house_service.get_users_house(user.id):
+            if house_service.get_users_house(user._id):
                 #user has a house already
                 self._handle_house(user)
             else:

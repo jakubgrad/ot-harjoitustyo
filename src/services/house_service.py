@@ -31,7 +31,7 @@ class HouseService():
         house_id = self.get_users_house_id(user_id)
         if house_id:
             self._house_repository.update_house(house_id, new_parameters)
-            return 
+            return
         self._house_repository.create_house(user_id, new_parameters)
 
     def get_energy_consumption(self, house_id):

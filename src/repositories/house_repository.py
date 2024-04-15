@@ -93,12 +93,12 @@ class HouseRepository():
         result = cursor.fetchone()
 
         if result:
-            id = result['id']
+            house_id = result['id']
             parameters = result['parameters']
             print("Inside get_user_house")
-            print(f"id:{id}")
+            print(f"house_id:{house_id}")
             print(f"parameters:{parameters}")
-            return House(id,parameters)
+            return House(house_id,parameters)
         return False
 
     def fetch_house_parameters(self, house_id):
@@ -119,10 +119,10 @@ class HouseRepository():
 
         result = cursor.fetchone()
 
-        print(f"result: {result}")
-        print(f"id of the house: {result['id']}")
-        parameters = result['parameters']
         if result:
+            print(f"result: {result}")
+            print(f"id of the house: {result['id']}")
+            parameters = result['parameters']
             return parameters
         return False
 
