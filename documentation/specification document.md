@@ -10,6 +10,11 @@ A user is welcomed by login/register buttons. If they click register, they're ta
 
 ![UI](/documentation/ui.png)
 
+#### Notes<br />
+Need to:
+- refactor the code so that UI knows only about User and House classes and not about user_ids etc
+-there should be a manual
+
 #### 💻 Functionality<br />
 **Before logging in:**<br />
 - [x] The user can register in the system<br />
