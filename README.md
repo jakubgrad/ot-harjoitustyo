@@ -22,7 +22,7 @@ poetry install --no-root
 in the command line opened inside the topmost project directory. If you don't have poetry installed and use a university computer, you'll likely be prompted if you want to install it. In that case, press <y> and <enter>. Then quit the terminal and open it in the same place so that the shell recognizes newly installed poetry <br/>
 Then, to initializa the database run:
 ```
-poetry run invoke init`
+poetry run invoke init
 ```
 According to course materials:<br/> <br/>
 "NOTE: If you are running an application using a SQLite database in a virtual desktop, 
