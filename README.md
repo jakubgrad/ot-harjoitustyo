@@ -37,7 +37,7 @@ The project can be started by running (preferably in the topmost directory of th
 poetry run invoke start
 ```
 As of today, you can register as a user with any username and password, but there is no registration option for the administration role. This is on purpose, since in the final version of the application, there will initially be one default administrator who will be able to give admin roles to user accounts and also delete their own role as administrator. This way, whoever wants to run this app can use the administration role to decide who has administrator priviledges. <br/>
-The credentials of the default administrator are username *m* and password *m*. So after starting the application, you can log in as administrator with these credentials and see what features are available. As of today, you can't change any parameters of the model.<br/>
+The credentials of the default administrator are username **m** and password **m**. So after starting the application, you can log in as administrator with these credentials and see what features are available. As of today, you can't change any parameters of the model.<br/>
 
 You can test the project with: 
 ```
