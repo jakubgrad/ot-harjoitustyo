@@ -1,6 +1,10 @@
 # House app
 The goal of the project is to create an app in which users can log in or register and receive their homes' energy consumption and pollution estimates based on filled out assessments. The application was developed using `Python 3.11` and using `Poetry` as a dependency manager<br/>
 
+<p align="center">
+    <img src="https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/b1dcbb13-18d2-4157-9e5e-98a0a9519cdc" width="50%" alt="Description of the image">
+</p>
+
 
 ## Documentation
 [Changelog](https://github.com/jakubgrad/ot-harjoitustyo/blob/main/documentation/changelog.md)<br/>
@@ -22,7 +26,7 @@ poetry install --no-root
 in the command line opened inside the topmost project directory. If you don't have poetry installed and use a university computer, you'll likely be prompted if you want to install it. In that case, press <y> and <enter>. Then quit the terminal and open it in the same place so that the shell recognizes newly installed poetry <br/>
 Then, to initializa the database run:
 ```
-poetry run invoke init`
+poetry run invoke init
 ```
 According to course materials:<br/> <br/>
 "NOTE: If you are running an application using a SQLite database in a virtual desktop, 
@@ -32,6 +36,9 @@ The project can be started by running (preferably in the topmost directory of th
 ```
 poetry run invoke start
 ```
+As of today, you can register as a user with any username and password, but there is no registration option for the administration role. This is on purpose, since in the final version of the application, there will initially be one default administrator who will be able to give admin roles to user accounts and also delete their own role as administrator. This way, whoever wants to run this app can use the administration role to decide who has administrator priviledges. <br/>
+The credentials of the default administrator are username **m** and password **m**. So after starting the application, you can log in as administrator with these credentials and by clicking "Login as administrator" and see what features are available. As of today, you can't change any parameters of the model.<br/>
+
 You can test the project with: 
 ```
 poetry run invoke test
