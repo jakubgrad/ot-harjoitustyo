@@ -11,6 +11,6 @@ class Model:
 
     def get_house_age_as_dictionary(self):
         h = {}
-        for i, row in enumerate(self._house_age):
+        for row in self._house_age:
             h[row[1]] = {"energy_consumption": row[3], "pollution": row[4]}
         return h
