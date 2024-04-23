@@ -22,7 +22,7 @@ Next, an Assesment view is shown, which allows *John Oliver* to describe his hou
 ```
 sequenceDiagram
     actor User
-    User->>UI: click on "Register" button
+    User->>UI: click on "Registration" button
     UI->>UI : handle_registration
     User->>UI: click on "Register" button
     UI->> HouseService: register("John Oliver", "birb")
