@@ -1,4 +1,4 @@
-from tkinter import ttk, constants
+from tkinter import ttk, constants, messagebox
 import tkinter as tk
 from services.house_service import house_service
 
@@ -70,3 +70,5 @@ class RegistrationView:
         if user:
             self._handle_assessment(user)
             #self._handle_login()
+        else: 
+            messagebox.showerror(title="Registration failed", message="Username taken")
