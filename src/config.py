@@ -9,3 +9,4 @@ except FileNotFoundError:
     pass
 
 DATABASE_PATH = os.getenv("DATABASE_PATH") or "default"
+HOUSE_IMAGE_PATH=os.path.join(dirname, "..", "pictures/house.png")
