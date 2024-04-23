@@ -7,5 +7,4 @@ class TestUser(unittest.TestCase):
         self.user = User(4, "username")
 
     def test_users_username_is_accessible(self):
-        self.assertEqual(self.user.username, "username") 
-
+        self.assertEqual(self.user.username, "username")
