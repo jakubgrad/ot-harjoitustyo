@@ -20,33 +20,6 @@ class HouseRepository():
 
         self._connection.commit()
 
-    def create_house(self, user_id, parameters):
-        cursor = self._connection.cursor()
-        data = (user_id, parameters)
-        cursor.execute('''
-            INSERT INTO houses (
-                user_id,
-                parameters)
-            VALUES
-                (?,?)
-        ''', data)
-
-        self._connection.commit()
-
-    def unpack_parameters(self, parameters):
-        try:
-            # generated code begins
-            parameter_list = [int(x) for x in parameters.split(',')]
-            p1 = parameter_list[0]
-            p2 = parameter_list[1]
-            # generated code ends
-            return p1, p2
-        except ValueError:
-            return 0,0
-        except AttributeError:
-            return 0,0
-
-
     def calculate_pollution(self, house_id):
         result = self.fetch_house_parameters(house_id)
         try:
@@ -125,11 +98,11 @@ class HouseRepository():
             print("Inside get_user_house")
             print(f"house_id:{house_id}")
             print(f"parameters:{parameters}")
-            return House(house_id,parameters)
+            return House(house_id, parameters)
         return False
 
     def fetch_house_parameters(self, house_id):
-        #if not self.get_users_house_id(user_id):
+        # if not self.get_users_house_id(user_id):
         #    print(f"{user_id} doesn't have a house, cannot fetch")
         #    return False
 
@@ -152,5 +125,6 @@ class HouseRepository():
             parameters = result['parameters']
             return parameters
         return False
+
 
 house_repository = HouseRepository(get_database_connection())
