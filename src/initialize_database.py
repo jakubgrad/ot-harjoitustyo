@@ -25,7 +25,6 @@ def drop_tables(connection):
         drop table if exists formulas;
     ''')
 
-
     connection.commit()
 
 
@@ -133,8 +132,6 @@ def create_tables(connection):
             (8, "Pellet stove", 7, 5),
             (9, "Geothermal heating", 5, 4);
     ''')
-
-
 
     connection.commit()
 
