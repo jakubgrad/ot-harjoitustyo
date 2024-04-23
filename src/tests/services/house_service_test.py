@@ -1,14 +1,23 @@
 import unittest
 from services.house_service import HouseService
-from repositories.user_repository import user_repository
-from repositories.house_repository import house_repository
+
+from repositories.house_repository import (
+    house_repository as default_house_repository)
+from repositories.user_repository import (
+    user_repository as default_user_repository)
+from repositories.administrator_repository import (
+    administrator_repository as default_administrator_repository)
+from repositories.model_repository import (
+    model_repository as default_model_repository)
 
 
 class TestHouseService(unittest.TestCase):
     def setUp(self):
         self.house_service = HouseService(
-            user_repository,
-            house_repository
+            default_user_repository,
+            default_house_repository,
+            default_administrator_repository,
+            default_house_repository
         )
         result = self.house_service.register("user1", "pass1")
         # would be nice to have:
