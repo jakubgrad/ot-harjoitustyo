@@ -32,7 +32,7 @@ Install all the dependencies:
 ```
 poetry install --no-root
 ```
-Then, to initializa the database run:
+Then, to initialize the database run:
 ```
 poetry run invoke init
 ```
