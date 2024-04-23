@@ -1,15 +1,16 @@
 from repositories.house_repository import (
-    house_repository as default_house_repository )
+    house_repository as default_house_repository)
 from repositories.user_repository import (
-    user_repository as default_user_repository )
+    user_repository as default_user_repository)
 from repositories.administrator_repository import (
-    administrator_repository as default_administrator_repository )
+    administrator_repository as default_administrator_repository)
 from repositories.model_repository import (
-    model_repository as default_model_repository )
+    model_repository as default_model_repository)
 
 
 class HouseService():
-    def __init__(self, user_repository, house_repository, administrator_repository, model_repository):
+    def __init__(self, user_repository, house_repository, \
+            administrator_repository, model_repository):
         self._user_repository = user_repository
         self._house_repository = house_repository
         self._administrator_repository = administrator_repository
@@ -18,7 +19,7 @@ class HouseService():
 
     def register(self, username_entry, password_entry):
         if self._user_repository.register(username_entry, password_entry):
-            return self.login(username_entry,password_entry)
+            return self.login(username_entry, password_entry)
         return False
 
     def login(self, username_entry, password_entry):
@@ -28,7 +29,8 @@ class HouseService():
         return False
 
     def administrator_login(self, username_entry, password_entry):
-        administrator = self._administrator_repository.login(username_entry, password_entry)
+        administrator = self._administrator_repository.login(
+            username_entry, password_entry)
         if administrator:
             return administrator
         return False
@@ -48,24 +50,25 @@ class HouseService():
         self._house_repository.create_house(user_id, new_parameters)
 
     def get_energy_consumption(self, house_id):
-        #house_id = self._house_repository.get_users_house_id(user_id)
+        # house_id = self._house_repository.get_users_house_id(user_id)
         result = self._house_repository.calculate_energy_consumption(house_id)
         return result
 
     def get_pollution(self, house_id):
-        #house_id = self._house_repository.get_users_house_id(user_id)
+        # house_id = self._house_repository.get_users_house_id(user_id)
         result = self._house_repository.calculate_pollution(house_id)
         return result
 
     def get_model(self):
         return self._model_repository.get_model()
 
-    def check_equation(self,text):
+    def check_equation(self, text):
         return self._model_repository.check_equation(text)
+
 
 house_service = HouseService(
     default_user_repository,
     default_house_repository,
     default_administrator_repository,
-    default_model_repository 
+    default_model_repository
 )
