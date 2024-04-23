@@ -21,6 +21,10 @@ def drop_tables(connection):
     cursor.execute('''
         drop table if exists house_age;
     ''')
+    cursor.execute('''
+        drop table if exists formulas;
+    ''')
+
 
     connection.commit()
 
@@ -73,6 +77,20 @@ def create_tables(connection):
         );
     ''')
 
+    cursor.execute('''
+        CREATE TABLE formulas ( 
+            id INTEGER PRIMARY KEY,
+            equation TEXT
+        );
+    ''')
+
+    cursor.execute('''
+        INSERT INTO formulas ( 
+            equation)
+        VALUES (
+            '5+5'
+        );
+    ''')
 
     cursor.execute('''
         INSERT INTO administrators ( 
