@@ -15,3 +15,9 @@
 - Added house view to UI
 - Added tests for testing house repository
 - Incorporated User and House entities into the code
+
+## Week 5
+- Added admin role, table and separate UI view of values of parameters
+- Created model entity, model repository
+- Created sql tables house_age, type_of_heating, formulas that support a model possible to change by administrator
+- Started working on the possibility by the administrator to update the formula by which energy consumption and pollution are calculated
