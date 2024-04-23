@@ -21,16 +21,16 @@ class AdministrationView:
         # Grid the frame within the root widget
         self._frame.grid(row=0, column=0)
 
-        self.txt_edit = tk.Text(self._frame, width=40, height=5)
+        #self.txt_edit = tk.Text(self._frame, width=40, height=5)
 
-        self.txt_edit.insert(tk.END, "5+5")
+        #self.txt_edit.insert(tk.END, "5+5")
 
-        update_button = tk.Button(
-            master=self._frame,
-            text="Update",
-            command=lambda: self._update_click(),
-            bg="#808000", fg="#ffffff"
-        )
+        #update_button = tk.Button(
+        #    master=self._frame,
+        #    text="Update",
+        #    command=lambda: self._update_click(),
+        #    bg="#808000", fg="#ffffff"
+        #)
 
         logout_button = tk.Button(
             master=self._frame,
@@ -76,30 +76,31 @@ class AdministrationView:
         self.tree_types_of_heating.grid(row=2, column=0, columnspan=2, sticky=(
             constants.E, constants.W), padx=5, pady=5)
 
-        self.txt_edit.grid(row=3, column=0, columnspan=2, sticky="ew")
-        update_button.grid(row=4, column=0, columnspan=2, sticky=(
-            constants.E, constants.W), padx=5, pady=5)
+        #self.txt_edit.grid(row=3, column=0, columnspan=2, sticky="ew")
+
+        #update_button.grid(row=4, column=0, columnspan=2, sticky=(
+        #    constants.E, constants.W), padx=5, pady=5)
         logout_button.grid(row=5, column=0, columnspan=2, sticky=(
             constants.E, constants.W), padx=5, pady=5)
 
         # Adjust column configuration for root widget
         self._root.grid_columnconfigure(0, weight=1)
 
-    def _update_click(self):
-        text = self.txt_edit.get("1.0", tk.END)
-        print(text)
-
-        if house_service.check_equation(text):
-            print("equation checked, works")
-        print("equation checked, doesnt work")
-        try:
-            print(eval(text))
-            messagebox.showinfo(title="Update successfull",
-                                message="You have successfully updated the model")
-        except:
-            print("Failed to evalute")
-            messagebox.showerror(title="Update failed",
-                                 message="Failed to parse your input")
+    #def _update_click(self):
+    #    text = self.txt_edit.get("1.0", tk.END)
+    #    print(text)
+    #
+    #    if house_service.check_equation(text):
+    #        print("equation checked, works")
+    #    print("equation checked, doesnt work")
+    #    try:
+    #        print(eval(text))
+    #        messagebox.showinfo(title="Update successfull",
+    #                            message="You have successfully updated the model")
+    #    except:
+    #        print("Failed to evalute")
+    #        messagebox.showerror(title="Update failed",
+    #                             message="Failed to parse your input")
 
     def _handle_logout_click(self):
         self._handle_login()
