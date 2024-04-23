@@ -30,8 +30,24 @@ class AssessmentView:
         house_age_label = ttk.Label(master=self._frame, text="House age")
         self._house_age_entry = ttk.Entry(master=self._frame)
 
+
         type_of_heating_label = ttk.Label(
-            master=self._frame, text="Type of heating 1-9")
+            master=self._frame, 
+            text="Types of heating 1-8:")
+
+        heating_types_label = ttk.Label(
+            master=self._frame, 
+            text="1. Gas boiler\n"
+                 "2. Electric heater\n"
+                 "3. Wood stove\n"
+                 "4. Solar panels\n"
+                 "5. District heating\n"
+                 "6. Gil boiler\n"
+                 "7. Pellet stove\n"
+                 "8. Geothermal heating"
+        )
+
+
         self._type_of_heating_entry = ttk.Entry(master=self._frame)
 
         update_button = tk.Button(
@@ -55,9 +71,10 @@ class AssessmentView:
         type_of_heating_label.grid(row=2, column=0, padx=5, pady=5)
         self._type_of_heating_entry  .grid(row=2, column=1, sticky=(
             constants.E, constants.W), padx=5, pady=5)
-        update_button.grid(row=3, column=0, columnspan=2, sticky=(
+        heating_types_label.grid(row=3, column=0, columnspan=2, padx=5, pady=5) 
+        update_button.grid(row=4, column=0, columnspan=2, sticky=(
             constants.E, constants.W), padx=5, pady=5)
-        logout_button.grid(row=4, column=0, columnspan=2, sticky=(
+        logout_button.grid(row=5, column=0, columnspan=2, sticky=(
             constants.E, constants.W), padx=5, pady=5)
 
         # Adjust column configuration for root widget
