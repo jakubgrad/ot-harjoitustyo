@@ -1,14 +1,15 @@
-from tkinter import ttk, constants
+from tkinter import ttk, constants, messagebox
 import tkinter as tk
 # from repositories.user_repository import user_repository
 from services.house_service import house_service
 
 
 class LoginView:
-    def __init__(self, root, handle_assessment,handle_house, handle_registration):
+    def __init__(self, root, handle_assessment,handle_house, handle_registration, handle_administration):
         self._root = root
         self._handle_registration = handle_registration
         self._handle_assessment = handle_assessment
+        self._handle_administration = handle_administration
         self._handle_house = handle_house
         self._frame = None
         self._username_entry = None
@@ -31,7 +32,7 @@ class LoginView:
         self._username_entry = ttk.Entry(master=self._frame)
 
         password_label = ttk.Label(master=self._frame, text="Password")
-        self._password_entry = ttk.Entry(master=self._frame)
+        self._password_entry = ttk.Entry(master=self._frame, show='*')
 
         login_button = tk.Button(
             master=self._frame,
@@ -45,6 +46,13 @@ class LoginView:
             command=lambda: self._handle_registration_click(),
             bg="#000080", fg="#ffffff"
         )
+        administrator_login_button = tk.Button(
+            master=self._frame,
+            text="Login as administrator",
+            command=lambda: self._handle_administrator_login_click(),
+            bg="#900C3F", fg="#ffffff"
+        )
+
 
         heading_label.grid(row=0, column=0, columnspan=2,
                            sticky=constants.W, padx=5, pady=5)
@@ -58,6 +66,8 @@ class LoginView:
             constants.E, constants.W), padx=5, pady=5)
         registration_button.grid(row=4, column=0, columnspan=2, sticky=(
             constants.E, constants.W), padx=5, pady=5)
+        administrator_login_button.grid(row=6, column=0, columnspan=2, sticky=(
+            constants.E, constants.W), padx=5, pady=5)
 
         # Adjust column configuration for root widget
         self._root.grid_columnconfigure(0, weight=1)
@@ -67,14 +77,29 @@ class LoginView:
         password_entry = self._password_entry.get()
         print(f"Attempt at logging in: {username_entry}")
         user = house_service.login(username_entry, password_entry)
-        print("handle login inside login view retrieved")
-        print(f"user with params: id:{user._id},username:{user.username}")
         if user:
+            print("handle login inside login view retrieved")
+            print(f"user with params: id:{user._id},username:{user.username}")
             if house_service.get_users_house(user._id):
                 #user has a house already
                 self._handle_house(user)
             else:
                 self._handle_assessment(user)
+        else:
+            messagebox.showerror(title="Login failed", message="Nonexisting username or bad password")
+
+    def _handle_administrator_login_click(self):
+        username_entry = self._username_entry.get()
+        password_entry = self._password_entry.get()
+        print(f"Attempt at logging in as administrator: {username_entry}")
+        administrator = house_service.administrator_login(username_entry, password_entry)
+        if administrator:
+            print("handle login inside login view retrieved")
+            print(f"administrator with params: id:{administrator._id},username:{administrator.username}")
+            self._handle_administration(administrator)
+        else:
+            messagebox.showerror(title="Login failed", message="Nonexisting username or bad password")
+
 
     def _handle_registration_click(self):
         print("handling registration click by login view")
