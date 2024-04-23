@@ -4,12 +4,16 @@ from repositories.user_repository import (
     user_repository as default_user_repository )
 from repositories.administrator_repository import (
     administrator_repository as default_administrator_repository )
+from repositories.model_repository import (
+    model_repository as default_model_repository )
+
 
 class HouseService():
-    def __init__(self, user_repository, house_repository,  administrator_repository):
+    def __init__(self, user_repository, house_repository, administrator_repository, model_repository):
         self._user_repository = user_repository
         self._house_repository = house_repository
         self._administrator_repository = administrator_repository
+        self._model_repository = model_repository
         self._user = None
 
     def register(self, username_entry, password_entry):
@@ -53,9 +57,15 @@ class HouseService():
         result = self._house_repository.calculate_pollution(house_id)
         return result
 
+    def get_model(self):
+        return self._model_repository.get_model()
+
+    def check_equation(self,text):
+        return self._model_repository.check_equation(text)
 
 house_service = HouseService(
     default_user_repository,
     default_house_repository,
-    default_administrator_repository 
+    default_administrator_repository,
+    default_model_repository 
 )
