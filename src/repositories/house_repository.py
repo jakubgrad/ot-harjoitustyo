@@ -20,6 +20,20 @@ class HouseRepository():
 
         self._connection.commit()
 
+    def create_house(self, user_id, parameters):
+        cursor = self._connection.cursor()
+        data = (user_id, parameters)
+        cursor.execute('''
+            INSERT INTO houses (
+                user_id,
+                parameters)
+            VALUES
+                (?,?)
+        ''', data)
+
+        self._connection.commit()
+
+
     def calculate_pollution(self, house_id):
         result = self.fetch_house_parameters(house_id)
         try:
