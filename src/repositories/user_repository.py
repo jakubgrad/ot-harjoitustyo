@@ -3,7 +3,6 @@ from entities.user import User
 
 
 class UserRepository():
-    # ,user):. The class should take user entity as injected dependency
     def __init__(self, connection):
         self._connection = connection
 

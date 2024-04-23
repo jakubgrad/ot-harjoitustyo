@@ -1,13 +1,14 @@
 from database_connection import get_database_connection
 from entities.administrator import Administrator
 
+
 class AdministratorRepository():
     # ,administrator):. The class should take administrator entity as injected dependency
     def __init__(self, connection):
         self._connection = connection
 
     def login(self, username, password):
-        if not self.check_if_username_exists(username):
+        if not self.check_if_administrator_name_exists(username):
             print("Username doesn't exist")
             return False
 
@@ -40,7 +41,7 @@ class AdministratorRepository():
         return False
 
     def register(self, username, password):
-        if self.check_if_username_exists(username):
+        if self.check_if_administrator_name_exists(username):
             print("Username taken")
             return False
 
@@ -48,17 +49,17 @@ class AdministratorRepository():
         data = (username, password)
         print("User being created")
         cursor.execute('''
-            INSERT INTO users(
+            INSERT INTO administrators(
                 username,
                 password)
             VALUES
                 (?,?)
         ''', data)
         self._connection.commit()
-        print("User created")
+        print("Administrator created")
         return True
 
-    def check_if_username_exists(self, username):
+    def check_if_administrator_name_exists(self, username):
         cursor = self._connection.cursor()
 
         cursor.execute('''
