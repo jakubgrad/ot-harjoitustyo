@@ -16,3 +16,6 @@
 | 14.04 | 4       | Created package/class diagrams |
 | 15.04 | 4       | Incorporated user and house entities, |
 |       |         | created class and packaging diagrams |
+| 23.04 | 5       | Created a lot of new administrator |
+|       |         | features and explanded energy modelling |
+| 23.04 | 2       | Linted, created a sequence diagram |
