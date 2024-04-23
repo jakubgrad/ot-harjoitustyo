@@ -33,6 +33,19 @@ class HouseRepository():
 
         self._connection.commit()
 
+    def unpack_parameters(self, parameters):
+        try:
+            # generated code begins
+            parameter_list = [int(x) for x in parameters.split(',')]
+            p1 = parameter_list[0]
+            p2 = parameter_list[1]
+            # generated code ends
+            return p1, p2
+        except ValueError:
+            return 0,0
+        except AttributeError:
+            return 0,0
+
 
     def calculate_pollution(self, house_id):
         result = self.fetch_house_parameters(house_id)
