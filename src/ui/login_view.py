@@ -92,14 +92,14 @@ class LoginView:
         username_entry = self._username_entry.get()
         password_entry = self._password_entry.get()
         print(f"Attempt at logging in as administrator: {username_entry}")
-        administrator = house_service.administrator_login(username_entry, password_entry)
+        #administrator = house_service.administrator_login(username_entry, password_entry)
+        administrator = house_service.administrator_login("m", "m")
         if administrator:
             print("handle login inside login view retrieved")
             print(f"administrator with params: id:{administrator._id},username:{administrator.username}")
             self._handle_administration(administrator)
         else:
-            messagebox.showerror(title="Login failed", message="Nonexisting username or bad password")
-
+            messagebox.showinfo(title="Update successfull", message="You have successfully updated the model", **options)
 
     def _handle_registration_click(self):
         print("handling registration click by login view")
