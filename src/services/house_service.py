@@ -2,11 +2,14 @@ from repositories.house_repository import (
     house_repository as default_house_repository )
 from repositories.user_repository import (
     user_repository as default_user_repository )
+from repositories.administrator_repository import (
+    administrator_repository as default_administrator_repository )
 
 class HouseService():
-    def __init__(self, user_repository, house_repository):
+    def __init__(self, user_repository, house_repository,  administrator_repository):
         self._user_repository = user_repository
         self._house_repository = house_repository
+        self._administrator_repository = administrator_repository
         self._user = None
 
     def register(self, username_entry, password_entry):
@@ -18,6 +21,12 @@ class HouseService():
         user = self._user_repository.login(username_entry, password_entry)
         if user:
             return user
+        return False
+
+    def administrator_login(self, username_entry, password_entry):
+        administrator = self._administrator_repository.login(username_entry, password_entry)
+        if administrator:
+            return administrator
         return False
 
     def get_users_house_id(self, user_id):
@@ -47,5 +56,6 @@ class HouseService():
 
 house_service = HouseService(
     default_user_repository,
-    default_house_repository
+    default_house_repository,
+    default_administrator_repository 
 )
