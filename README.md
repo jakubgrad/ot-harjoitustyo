@@ -28,6 +28,10 @@ Enter poetry shel:
 ```
 poetry run invoke shell
 ```
+Install all the dependencies:
+```
+poetry install --no-root
+```
 Then, to initializa the database run:
 ```
 poetry run invoke init
