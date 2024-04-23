@@ -5,6 +5,8 @@ The goal of the project is to create an app in which users can log in or registe
     <img src="https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/b1dcbb13-18d2-4157-9e5e-98a0a9519cdc" width="50%" alt="Description of the image">
 </p>
 
+# Releases
+[Release 1](https://github.com/jakubgrad/ot-harjoitustyo/releases/tag/viikko5)
 
 ## Documentation
 [Changelog](https://github.com/jakubgrad/ot-harjoitustyo/blob/main/documentation/changelog.md)<br/>
