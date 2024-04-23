@@ -4,7 +4,7 @@ from services.house_service import house_service
 
 
 class AssessmentView:
-    def __init__(self, root, handle_login, handle_house, user):#user_id):
+    def __init__(self, root, handle_login, handle_house, user):  # user_id):
         self._root = root
         self._handle_login = handle_login
         self._handle_house = handle_house
@@ -75,8 +75,8 @@ class AssessmentView:
         print(f"house age:{house_age}")
         print(f"type of heating:{type_of_heating_entry}")
         print(f"_user._id:{self._user._id}")
-        #house_id = house_service.get_users_house_id(self._user._id)
-        #print(f"house_id found in UI:{house_id}")
+        # house_id = house_service.get_users_house_id(self._user._id)
+        # print(f"house_id found in UI:{house_id}")
         house_service.update_house(self._user._id, new_parameters)
 
         self._handle_house(self._user)
