@@ -21,6 +21,12 @@ class AdministrationView:
         # Grid the frame within the root widget
         self._frame.grid(row=0, column=0)
 
+        self.lbl_house_age = tk.Label(
+            self._frame, bg="#000080", fg="#ffffff", padx=5, pady=5, text="House Age parameters (influence of the year of construction on the energy consumption and pollution)")
+
+        self.lbl_types_of_heating = tk.Label(
+            self._frame, bg="#000080", fg="#ffffff", padx=5, pady=5, text="Types of heating parameters (influence of heating a house has on the the energy consumption and pollution)")
+
         #self.txt_edit = tk.Text(self._frame, width=40, height=5)
 
         #self.txt_edit.insert(tk.END, "5+5")
@@ -71,16 +77,20 @@ class AdministrationView:
             self.tree_types_of_heating.insert(
                 '', 'end', text=row[0], values=(row[1], row[2], row[3], row[4]))
 
-        self.tree_house_age.grid(row=1, column=0, columnspan=2, sticky=(
+        self.lbl_house_age.grid(row=1, column=0, columnspan=2, sticky=(
             constants.E, constants.W), padx=5, pady=5)
-        self.tree_types_of_heating.grid(row=2, column=0, columnspan=2, sticky=(
+        self.tree_house_age.grid(row=2, column=0, columnspan=2, sticky=(
+            constants.E, constants.W), padx=5, pady=5)
+        self.lbl_types_of_heating.grid(row=3, column=0, columnspan=2, sticky=(
+            constants.E, constants.W), padx=5, pady=5)
+        self.tree_types_of_heating.grid(row=4, column=0, columnspan=2, sticky=(
             constants.E, constants.W), padx=5, pady=5)
 
         #self.txt_edit.grid(row=3, column=0, columnspan=2, sticky="ew")
 
         #update_button.grid(row=4, column=0, columnspan=2, sticky=(
         #    constants.E, constants.W), padx=5, pady=5)
-        logout_button.grid(row=5, column=0, columnspan=2, sticky=(
+        logout_button.grid(row=7, column=0, columnspan=2, sticky=(
             constants.E, constants.W), padx=5, pady=5)
 
         # Adjust column configuration for root widget
