@@ -6,7 +6,8 @@ from PIL import Image, ImageTk
 
 
 class HouseView:
-    def __init__(self, root, handle_login, handle_assessment, user):#user_id):
+    # user_id):
+    def __init__(self, root, handle_login, handle_assessment, user):
         self._root = root
         self._handle_login = handle_login
         self._handle_assessment = handle_assessment
@@ -17,7 +18,7 @@ class HouseView:
         self._frame = None
         self._house_age_entry = None
         self._type_of_heating_entry = None
-        self.image_path =  HOUSE_IMAGE_PATH
+        self.image_path = HOUSE_IMAGE_PATH
 
         self._initialize()
 
@@ -45,8 +46,8 @@ class HouseView:
             master=self._frame, text="House pollution: " + str(pollution_estimate))
 
         user_id_label = ttk.Label(
-            master=self._frame, text="user._id: " + str(self.user._id)+
-                ", Username: "+str(self.user.username) )
+            master=self._frame, text="user._id: " + str(self.user._id) +
+            ", Username: "+str(self.user.username))
 
         update_button = ttk.Button(
             master=self._frame,
@@ -79,9 +80,8 @@ class HouseView:
         user_id_label.grid(row=6, column=0, columnspan=2, padx=5, pady=5)
         pollution_label.grid(row=2, column=0, padx=5, pady=5)
 
-        
         image = Image.open(self.image_path)
-        resized_image = image.resize((200, 200))  
+        resized_image = image.resize((200, 200))
         self.photo = ImageTk.PhotoImage(resized_image)
         image_label = tk.Label(master=self._frame, image=self.photo)
         image_label.grid(row=7, column=0, rowspan=6, padx=5, pady=5)

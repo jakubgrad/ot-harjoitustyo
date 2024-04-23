@@ -5,7 +5,7 @@ from services.house_service import house_service
 
 
 class LoginView:
-    def __init__(self, root, handle_assessment,handle_house, handle_registration, handle_administration):
+    def __init__(self, root, handle_assessment, handle_house, handle_registration, handle_administration):
         self._root = root
         self._handle_registration = handle_registration
         self._handle_assessment = handle_assessment
@@ -53,7 +53,6 @@ class LoginView:
             bg="#900C3F", fg="#ffffff"
         )
 
-
         heading_label.grid(row=0, column=0, columnspan=2,
                            sticky=constants.W, padx=5, pady=5)
         username_label.grid(row=1, column=0, padx=5, pady=5)
@@ -81,27 +80,29 @@ class LoginView:
             print("handle login inside login view retrieved")
             print(f"user with params: id:{user._id},username:{user.username}")
             if house_service.get_users_house(user._id):
-                #user has a house already
+                # user has a house already
                 self._handle_house(user)
             else:
                 self._handle_assessment(user)
         else:
-            messagebox.showerror(title="Login failed", message="Nonexisting username or bad password")
+            messagebox.showerror(title="Login failed",
+                                 message="Nonexisting username or bad password")
 
     def _handle_administrator_login_click(self):
         username_entry = self._username_entry.get()
         password_entry = self._password_entry.get()
         print(f"Attempt at logging in as administrator: {username_entry}")
-        #administrator = house_service.administrator_login(username_entry, password_entry)
-        administrator = house_service.administrator_login("m", "m")
+        administrator = house_service.administrator_login(username_entry, password_entry)
+        #administrator = house_service.administrator_login("m", "m")
         if administrator:
             print("handle login inside login view retrieved")
-            print(f"administrator with params: id:{administrator._id},username:{administrator.username}")
+            print(
+                f"administrator with params: id:{administrator._id},username:{administrator.username}")
             self._handle_administration(administrator)
         else:
-            messagebox.showinfo(title="Update successfull", message="You have successfully updated the model", **options)
+            messagebox.showerror(title="Login failed",
+                                 message="Nonexisting username or bad password")
 
     def _handle_registration_click(self):
         print("handling registration click by login view")
         self._handle_registration()
-

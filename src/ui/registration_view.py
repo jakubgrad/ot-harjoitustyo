@@ -69,6 +69,7 @@ class RegistrationView:
         user = house_service.register(username_entry, password_entry)
         if user:
             self._handle_assessment(user)
-            #self._handle_login()
-        else: 
-            messagebox.showerror(title="Registration failed", message="Username taken")
+            # self._handle_login()
+        else:
+            messagebox.showerror(title="Registration failed",
+                                 message="Username taken")

@@ -38,7 +38,6 @@ class UI:
     def _handle_administration(self, administrator):
         self._show_administration_view(administrator)
 
-
     def _show_login_view(self):
         self._hide_current_view()
 
