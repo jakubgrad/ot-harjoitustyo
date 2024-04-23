@@ -1,7 +1,9 @@
 from tkinter import Tk
 from ui.registration_view import RegistrationView
 from ui.assessment_view import AssessmentView
+from ui.administration_view import AdministrationView
 from ui.login_view import LoginView
+from ui.administrator_login_view import AdministratorLoginView
 from ui.house_view import HouseView
 
 
@@ -34,10 +36,27 @@ class UI:
     def _handle_login(self):
         self._show_login_view()
 
+    def _handle_administration(self, administrator):
+        self._show_administration_view(administrator)
+
+    def _handle_administrator_login(self):
+        self._show_administrator_login_view()
+
     def _show_login_view(self):
         self._hide_current_view()
 
         self._current_view = LoginView(
+            self._root,
+            self._handle_assessment,
+            self._handle_house,
+            self._handle_registration,
+            self._handle_administration
+        )
+
+    def _show_administrator_login_view(self):
+        self._hide_current_view()
+
+        self._current_view = AdministratorLoginView(
             self._root,
             self._handle_assessment,
             self._handle_house,
@@ -68,6 +87,16 @@ class UI:
         )
 
         print("attempt by UI to show assessment view finished")
+
+    def _show_administration_view(self, administrator):
+        print("attempt by UI to show administration view")
+        self._hide_current_view()
+
+        self._current_view = AdministrationView(
+            self._root,
+            administrator,
+            self._handle_login
+        )
 
     def _show_house_view(self, user_id):
         print("attempt by UI to show house view")
