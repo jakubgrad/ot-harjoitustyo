@@ -73,4 +73,4 @@ You can run  `rm -rf ~/.config/google-chrome/Singleton*` and then try to generat
 Note: in principle the above `poetry` commands can be run in any project directory thanks to using absolute path of the project in `tasks.py`, but the app was only tested by running commands in the topmost directory<br/>
 
 **[Ylimääräinen koodikatselmointi = Additional code review](https://github.com/nuuttikuosa/ohjelmistotekniikka2024)**
-
+[Peer review 1](https://github.com/tammekasra/ot-harjoitustyo2024/issues/1)
