@@ -4,11 +4,11 @@ To install, follow the instructions in the README.md. After launching, the follo
 <p align="center">
     <img src="https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/7db8409b-1339-41e6-bfb5-02263dddb338" width="25%" alt="Description of the image">
 </p>
-There is no users yet in the database, so you need to click on `Register` and choose username and password. There is no restrictions on the username and password apart from that the username cannot already be taken. After registration, the user is presented with `Assessment` view, which makes it possible to put in information about your home on the basis of which the energy consumption and pollution can be calculated. In the form, `age` of the house means year of construction, e.g. 1991. <br>
+There is no users yet in the database, so you need to click on `Register` and choose username and password. There is no restrictions on the username and password apart from that the username cannot already be taken. After registration, the user is presented with `Assessment` view, which makes it possible to put in information about your home on the basis of which the energy consumption and pollution can be calculated. In the form, `age` of the house means year of construction, e.g. 1991. <br><br>
 <p align="center">
     <img src="https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/b3cbfb55-0f78-40fa-b9fa-626e2a8a7f68" width="25%" alt="Description of the image">
 </p><br>
-After clicking on `Update` the user is taken to `House` view with a centered picture of a house and information on energy consumption and pollution. The values aren't accurate yet and don't take full advantage of the energy model. However, once they do, the energy and pollution wil be expressed in reasonable values (e.g. KW and kg). <br>
+After clicking on `Update` the user is taken to `House` view with a centered picture of a house and information on energy consumption and pollution. The values aren't accurate yet and don't take full advantage of the energy model. However, once they do, the energy and pollution wil be expressed in reasonable values (e.g. KW and kg). <br><br>
 <p align="center">
     <img src="https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/b6b43d99-3f7b-4528-8e19-f2b27493ae1f" width="25%" alt="Description of the image">
 </p> <br>
