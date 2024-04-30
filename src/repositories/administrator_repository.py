@@ -1,13 +1,34 @@
 from database_connection import get_database_connection
 from entities.administrator import Administrator
 
+class AdministratorRepository:
+    """Repository class for handling administrator data in the database.
 
-class AdministratorRepository():
-    # ,administrator):. The class should take administrator entity as injected dependency
+    Args:
+        connection: Database connection object.
+
+    Attributes:
+        _connection: Database connection object.
+    """
+
     def __init__(self, connection):
+        """Constructor for the AdministratorRepository class.
+
+        Args:
+            connection: Database connection object.
+        """
         self._connection = connection
 
     def login(self, username, password):
+        """Attempts to log in an administrator with the provided credentials.
+
+        Args:
+            username: Username of the administrator.
+            password: Password of the administrator.
+
+        Returns:
+            Administrator object if login is successful, False otherwise.
+        """
         if not self.check_if_administrator_name_exists(username):
             print("Username doesn't exist")
             return False
@@ -41,6 +62,15 @@ class AdministratorRepository():
         return False
 
     def register(self, username, password):
+        """Registers a new administrator with the provided credentials.
+
+        Args:
+            username: Username of the new administrator.
+            password: Password of the new administrator.
+
+        Returns:
+            True if registration is successful, False otherwise.
+        """
         if self.check_if_administrator_name_exists(username):
             print("Username taken")
             return False
@@ -60,6 +90,14 @@ class AdministratorRepository():
         return True
 
     def check_if_administrator_name_exists(self, username):
+        """Checks if an administrator with the given username exists in the database.
+
+        Args:
+            username: Username to check.
+
+        Returns:
+            True if an administrator with the given username exists, False otherwise.
+        """
         cursor = self._connection.cursor()
 
         cursor.execute('''
@@ -76,3 +114,4 @@ class AdministratorRepository():
 
 
 administrator_repository = AdministratorRepository(get_database_connection())
+
