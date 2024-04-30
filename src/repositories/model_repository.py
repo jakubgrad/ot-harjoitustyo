@@ -21,61 +21,6 @@ class ModelRepository:
         """
         self._connection = connection
 
-    def evaluate_equation_for_house(self, house):
-        """Evaluates the energy consumption and pollution for a given house.
-
-        Args:
-            house: House object for evaluation.
-
-        Returns:
-            Tuple containing energy consumption and pollution values.
-        """
-        try:
-            house_age, type_of_heating = house.unpack_parameters()
-            house_age = self.find_min_year(house_age)
-
-            model = self.get_model()
-
-            types_of_heating_as_dictionary = \
-                model.get_types_of_heating_as_dictionary()
-            house_age_as_dictionary = \
-                model.get_house_age_as_dictionary()
-
-            energy_consumption = types_of_heating_as_dictionary[type_of_heating][
-                "energy_consumption"] + \
-                house_age_as_dictionary[house_age]["energy_consumption"]
-
-            pollution = types_of_heating_as_dictionary[type_of_heating]["pollution"] + \
-                house_age_as_dictionary[house_age]["pollution"]
-
-            return energy_consumption, pollution
-
-        except KeyError:
-            print(" evaluate_equation_for_house failed")
-            return False
-
-    def check_equation(self, equation):
-        """Checks the validity of an equation.
-
-        Args:
-            equation: Equation to be checked.
-
-        Returns:
-            True if the equation is valid, False otherwise.
-        """
-        print("equation")
-
-        parameters = "1991" + ","+"2"
-        example_house = House(1, parameters)
-        try:
-            print(self.evaluate_equation_for_house(example_house))
-            ast.literal_eval(equation)
-        except KeyError:
-            print("check_equation failed")
-            return False
-
-        return True
-
     def find_min_year(self, year):
         """Finds the minimum year from the database.
 
