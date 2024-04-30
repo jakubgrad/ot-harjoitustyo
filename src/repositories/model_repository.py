@@ -113,4 +113,51 @@ class ModelRepository():
         return False
 
 
+    def update_model(self, info):
+        cursor = self._connection.cursor()
+
+        if "min_year" in info:
+            house_age = info
+            min_year = house_age["min_year"]
+            max_year = house_age["max_year"]
+            ha_energy_consumption = house_age["ha_energy_consumption"]
+            ha_pollution = house_age["ha_pollution"]
+
+            data = (min_year, max_year, ha_energy_consumption, ha_pollution)
+
+            cursor.execute('''
+                INSERT INTO house_age(
+                    year_min ,
+                    year_max,
+                    energy_consumption,
+                    pollution)
+                VALUES
+                    (?,?,?,?)
+            ''', data)
+            self._connection.commit()
+            print("house_age updated")
+            return True
+        else:
+            print(info)
+            types_of_heating = info
+            type_of_heating = types_of_heating["type_of_heating"]
+            name = types_of_heating["name"]
+            energy_consumption = types_of_heating["energy_consumption"]
+            pollution = types_of_heating["pollution"]
+
+            data = (type_of_heating, name, energy_consumption, pollution)
+
+            cursor.execute('''
+                INSERT INTO types_of_heating(
+                    type,
+                    name,
+                    energy_consumption,
+                    pollution)
+                VALUES
+                    (?,?,?,?)
+            ''', data)
+            self._connection.commit()
+            print("types_of_heating updated")
+            return True
+
 model_repository = ModelRepository(get_database_connection())
