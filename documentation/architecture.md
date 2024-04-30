@@ -6,7 +6,9 @@
 # Packaging diagrams<br/>
 ![Packaging diagram image](/documentation/pictures/package_diagram.drawio.png)
 
-# Class diagrams<br/>
+# Class diagrams
+<br/>
+
 ```mermaid
  classDiagram
     class House{
@@ -24,7 +26,7 @@
 Sequence Diagram that describes the first time a user registers and interacts with an app. The first screen of an app offers only a log in option. The second, opened after `handle_registration` allows the user to register with username *John Oliver* and password *birb*.  <br/>
 Next, an Assesment view is shown, which allows *John Oliver* to describe his house as built in *2002* and using type *2* heating. Next, `HouseService` asks for the id of the house of *John Oliver*, who himself is a user of id 43, but because there is no house references his id, HouseRepository returns *False*. Next, HouseRepository successfully creates a house for *John Oliver* and execution stack comes back to UI, which produces the House View with information and estimates of energy consumption and pollution.
 
-```
+```mermaid
 sequenceDiagram
     actor User
     User->>UI: click on "Registration" button
