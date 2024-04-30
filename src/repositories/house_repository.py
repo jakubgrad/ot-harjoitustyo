@@ -193,4 +193,3 @@ class HouseRepository:
 
 
 house_repository = HouseRepository(get_database_connection())
-
