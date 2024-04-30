@@ -3,10 +3,10 @@
     <img src="https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/118101ad-c42e-4c86-a188-d2cc3836f1b7" width="50%" alt="Description of the image">
 </p>
 
-# Packaging diagrams:<br/>
+# Packaging diagrams<br/>
 ![Packaging diagram image](/documentation/pictures/package_diagram.drawio.png)
 
-Class diagram:<br/>
+# Class diagrams<br/>
 ```mermaid
  classDiagram
     class House{
@@ -47,4 +47,5 @@ sequenceDiagram
 ```
 This differs from the experience of a user who has registered before and has already provided information on his house, because that user will, after logging in, immediatelly get the House view (which is provided by the `_handle_house()` function).<br>
 The application uses Tkinter for graphical interface. There is a few files for the ui
-# Overview 
+# Overview of specific files
+###### tasks.py
