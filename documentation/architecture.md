@@ -1,41 +1,5 @@
 ## Structure
-├── data
-│   ├── app.db
-│   └── test_app.db
-├── documentation
-├── src
-│   ├── entities
-│   │   ├── administrator.py
-│   │   ├── house.py
-│   │   ├── model.py
-│   │   └── user.py
-│   ├── repositories
-│   │   ├── administrator_repository.py
-│   │   ├── house_repository.py
-│   │   ├── __init__.py
-│   │   └── model_repository.py
-│   ├── services
-│   │   ├── house_service.py
-│   │   └── __init__.py
-│   ├── tests
-│   ├── config.py
-│   ├── database_connection.py
-│   ├── index.py
-│   ├── initialize_database.py
-│   ├── notes
-│   └── ui
-│       ├── administration_view.py
-│       ├── assessment_view.py
-│       ├── house_view.py
-│       ├── __init__.py
-│       ├── login_view.py
-│       ├── registration_view.py
-│       └── ui.py
-├── poetry.lock
-├── pyproject.toml
-├── pytest.ini
-├── README.md
-└── tasks.py
+├── data │ ├── app.db │ └── test_app.db<br>├── documentation<br>├── src │ ├── entities │ │ ├── administrator.py │ │ ├── house.py │ │ ├── model.py │ │ └── user.py │ ├── repositories │ │ ├── administrator_repository.py │ │ ├── house_repository.py │ │ ├── init.py │ │ └── model_repository.py │ ├── services │ │ ├── house_service.py │ │ └── init.py │ ├── tests │ ├── config.py │ ├── database_connection.py │ ├── index.py │ ├── initialize_database.py │ ├── notes │ └── ui │ ├── administration_view.py │ ├── assessment_view.py │ ├── house_view.py │ ├── init.py │ ├── login_view.py │ ├── registration_view.py │ └── ui.py<br>├── poetry.lock<br>├── pyproject.toml<br>├── pytest.ini<br>├── README.md<br>└── tasks.py
 
 Packaging diagram:<br/>
 ![Packaging diagram image](/documentation/pictures/package_diagram.drawio.png)
