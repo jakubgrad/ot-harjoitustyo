@@ -65,6 +65,10 @@ class HouseService():
     def check_equation(self, text):
         return self._model_repository.check_equation(text)
 
+    def update_model(self,house_age):
+        return self._model_repository.update_model(house_age)
+
+
 
 house_service = HouseService(
     default_user_repository,
