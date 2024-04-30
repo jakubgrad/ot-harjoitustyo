@@ -1,13 +1,14 @@
 ## Structure
 <p align="center">
-    <img src="https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/118101ad-c42e-4c86-a188-d2cc3836f1b7" width="50%" alt="Description of the image">
+    <img src="https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/118101ad-c42e-4c86-a188-d2cc3836f1b7" width="40%" alt="Description of the image">
 </p>
 
 ## Packaging diagrams<br/>
 
 <p align="center">
-    <img src="/documentation/pictures/package_diagram.drawio.png" width="50%" alt="Description of the image">
+    <img src="/documentation/pictures/package_diagram.drawio.png" width="25%" alt="Description of the image">
 </p>
+
 ## Class diagrams
 <br/>
 
