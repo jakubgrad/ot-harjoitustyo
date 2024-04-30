@@ -19,3 +19,9 @@
 | 23.04 | 5       | Created a lot of new administrator |
 |       |         | features and explanded energy modelling |
 | 23.04 | 2       | Linted, created a sequence diagram |
+| 30.04 | 2       | Tried to have an administrator view |
+|       |         | where you can click on different values and update them directly, |
+|       |         | but it was too hard to do :<< |
+|       | 1       | Wrote docstrings, manual, improved architecture |
+|       | 4       | Made it possible to update the model from administrator view |
+|       | 1       | Wrote tests for administrator, model|
