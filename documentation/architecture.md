@@ -51,7 +51,6 @@ The application uses Tkinter for graphical interface. There is a few files for t
 ###### tasks.py
 Contains commands for poetry, allowing e.g. `poetry run invoke start` to start the programme.
 ###### /ui
-A directory containing classes shown to the user, among them:
 ###### administration_view.py
 Handles the administration interface, allowing administrators to manage parameters related to house age and types of heating.
 ###### assessment_view.py
@@ -61,7 +60,6 @@ Displays information about the user's house, including energy consumption and po
 ###### registration_view.py
 Handles the registration interface for new users, allowing them to register with a username and password.
 ###### /repositories
-A directory for repositories, which handle logic specific to each part of the application:
 ###### house_repository.py
 Contains the HouseRepository class, which is responsible for handling data related to houses in the database. It includes methods for creating, updating, and fetching house data, as well as (partly) finding pollution and energy consumption based on house parameters.
 ###### model_repository.py
