@@ -13,7 +13,7 @@ The goal of the project is to create an app in which users can log in or registe
 [Architecture](https://github.com/jakubgrad/ot-harjoitustyo/blob/main/documentation/architecture.md)<br/>
 [Specification document](https://github.com/jakubgrad/ot-harjoitustyo/blob/main/documentation/specification%20document.md)<br/>
 [Time Keeping](https://github.com/jakubgrad/ot-harjoitustyo/blob/main/documentation/time_keeping.md)<br/>
-
+[Manual](https://github.com/jakubgrad/ot-harjoitustyo/blob/main/documentation/manual.md)<br/>
 
 ## Using the application 
 Clone the repository and enter topmost directory:<br/>
