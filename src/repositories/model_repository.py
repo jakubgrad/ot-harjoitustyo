@@ -160,11 +160,10 @@ class ModelRepository:
         cursor = self._connection.cursor()
 
         if "min_year" in info:
-            house_age = info
-            min_year = house_age["min_year"]
-            max_year = house_age["max_year"]
-            ha_energy_consumption = house_age["ha_energy_consumption"]
-            ha_pollution = house_age["ha_pollution"]
+            min_year = info["min_year"]
+            max_year = info["max_year"]
+            ha_energy_consumption = info["ha_energy_consumption"]
+            ha_pollution = info["ha_pollution"]
 
             data = (min_year, max_year, ha_energy_consumption, ha_pollution)
 
@@ -179,14 +178,11 @@ class ModelRepository:
             ''', data)
             self._connection.commit()
             print("house_age updated")
-            return True
         else:
-            print(info)
-            types_of_heating = info
-            type_of_heating = types_of_heating["type_of_heating"]
-            name = types_of_heating["name"]
-            energy_consumption = types_of_heating["energy_consumption"]
-            pollution = types_of_heating["pollution"]
+            type_of_heating = info["type_of_heating"]
+            name = info["name"]
+            energy_consumption = info["energy_consumption"]
+            pollution = info["pollution"]
 
             data = (type_of_heating, name, energy_consumption, pollution)
 
@@ -200,8 +196,7 @@ class ModelRepository:
                     (?,?,?,?)
             ''', data)
             self._connection.commit()
-            print("types_of_heating updated")
-            return True
+
+        return True
 
 model_repository = ModelRepository(get_database_connection())
-
