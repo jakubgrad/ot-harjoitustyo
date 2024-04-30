@@ -1,3 +1,42 @@
+## Structure
+├── data
+│   ├── app.db
+│   └── test_app.db
+├── documentation
+├── src
+│   ├── entities
+│   │   ├── administrator.py
+│   │   ├── house.py
+│   │   ├── model.py
+│   │   └── user.py
+│   ├── repositories
+│   │   ├── administrator_repository.py
+│   │   ├── house_repository.py
+│   │   ├── __init__.py
+│   │   └── model_repository.py
+│   ├── services
+│   │   ├── house_service.py
+│   │   └── __init__.py
+│   ├── tests
+│   ├── config.py
+│   ├── database_connection.py
+│   ├── index.py
+│   ├── initialize_database.py
+│   ├── notes
+│   └── ui
+│       ├── administration_view.py
+│       ├── assessment_view.py
+│       ├── house_view.py
+│       ├── __init__.py
+│       ├── login_view.py
+│       ├── registration_view.py
+│       └── ui.py
+├── poetry.lock
+├── pyproject.toml
+├── pytest.ini
+├── README.md
+└── tasks.py
+
 Packaging diagram:<br/>
 ![Packaging diagram image](/documentation/pictures/package_diagram.drawio.png)
 
@@ -40,4 +79,5 @@ sequenceDiagram
     UI ->> UI : _handle_house(43)
 
 ```
-This differs from the experience of a user who has registered before and has already provided information on his house, because that user will, after logging in, immediatelly get the House view (which is provided by the `_handle_house()` function).
+This differs from the experience of a user who has registered before and has already provided information on his house, because that user will, after logging in, immediatelly get the House view (which is provided by the `_handle_house()` function).<br>
+The application uses Tkinter for graphical interface. There is a few files for the ui
