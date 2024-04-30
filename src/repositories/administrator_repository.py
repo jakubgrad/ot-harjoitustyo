@@ -114,4 +114,3 @@ class AdministratorRepository:
 
 
 administrator_repository = AdministratorRepository(get_database_connection())
-
