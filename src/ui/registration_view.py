@@ -35,15 +35,13 @@ class RegistrationView:
         register_button = tk.Button(
             master=self._frame,
             text="Register",
-            command=lambda: self._handle_registration_click(),
-            bg="#000080", fg="#ffffff"
+            command=lambda: self._handle_registration_click()
         )
 
         logging_in_button = tk.Button(
             master=self._frame,
             text="Logging in",
-            command=lambda: self._handle_login(),
-            bg="#ff8c00", fg="#ffffff"
+            command=lambda: self._handle_login()
         )
 
         heading_label.grid(row=0, column=0, columnspan=2,

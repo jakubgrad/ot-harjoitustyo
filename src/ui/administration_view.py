@@ -22,10 +22,10 @@ class AdministrationView:
         self._frame.grid(row=0, column=0)
 
         self.lbl_house_age = tk.Label(
-            self._frame, bg="#000080", fg="#ffffff", padx=5, pady=5, text="House Age parameters (influence of the year of construction on the energy consumption and pollution)")
+            self._frame, padx=5, pady=5, text="House Age parameters (influence of the year of construction on the energy consumption and pollution)")
 
         self.lbl_types_of_heating = tk.Label(
-            self._frame, bg="#000080", fg="#ffffff", padx=5, pady=5, text="Types of heating parameters (influence of heating a house has on the the energy consumption and pollution)")
+            self._frame, padx=5, pady=5, text="Types of heating parameters (influence of heating a house has on the the energy consumption and pollution)")
 
         #self.txt_edit = tk.Text(self._frame, width=40, height=5)
 
@@ -35,14 +35,12 @@ class AdministrationView:
         #    master=self._frame,
         #    text="Update",
         #    command=lambda: self._update_click(),
-        #    bg="#808000", fg="#ffffff"
         #)
 
         logout_button = tk.Button(
             master=self._frame,
             text="Logout",
-            command=lambda: self._handle_logout_click(),
-            bg="#ff8c00", fg="#ffffff"
+            command=lambda: self._handle_logout_click()
         )
 
         send_types_of_heating_button = tk.Button(

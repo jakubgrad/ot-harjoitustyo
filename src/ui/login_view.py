@@ -37,20 +37,17 @@ class LoginView:
         login_button = tk.Button(
             master=self._frame,
             text="Login",
-            command=lambda: self._handle_login_click(),
-            bg="#ff8c00", fg="#ffffff"
+            command=lambda: self._handle_login_click()
         )
         registration_button = tk.Button(
             master=self._frame,
             text="Registration",
-            command=lambda: self._handle_registration_click(),
-            bg="#000080", fg="#ffffff"
+            command=lambda: self._handle_registration_click()
         )
         administrator_login_button = tk.Button(
             master=self._frame,
             text="Login as administrator",
-            command=lambda: self._handle_administrator_login_click(),
-            bg="#900C3F", fg="#ffffff"
+            command=lambda: self._handle_administrator_login_click()
         )
 
         heading_label.grid(row=0, column=0, columnspan=2,
