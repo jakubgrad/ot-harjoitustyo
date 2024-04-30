@@ -29,7 +29,7 @@ Need to:
 **Further development ideas**<br />
 - [x] An administrator role could be created. An administrator could update the values of the model and update the values for users<br />
 - [ ] Password reset functionality for when a user forgets their password<br />
-- [ ] The assessment could be expanded, or there could be a basic and an advanced assesment<br />
+- [x] The assessment could be expanded, or there could be a basic and an advanced assesment<br />
 - [ ] An option could be added to change username, e.g. in settings<br />
 - [ ] An option could be added to export information about your home<br />
 - [ ] Users could have several homes <br />
