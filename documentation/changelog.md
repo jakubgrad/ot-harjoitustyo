@@ -23,4 +23,8 @@
 - Started working on the possibility by the administrator to update the formula by which energy consumption and pollution are calculated
 
 ## Week 6
--Added entries and submit button for expanding the energy model inside the database. So that an admin can change the parameters of the currently existing model
+- Added a view for administrator of all values in the energy model
+- Added entries and submit button for expanding the energy model inside the database. So that an admin can change the parameters of the currently existing model
+- Added basic tests for the administrator and model repositories
+- Added docstrings to entities, repositories, and house_service
+
