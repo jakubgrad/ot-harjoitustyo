@@ -68,7 +68,6 @@ class LoginView:
         administrator_login_button.grid(row=6, column=0, columnspan=2, sticky=(
             constants.E, constants.W), padx=5, pady=5)
 
-        # Adjust column configuration for root widget
         self._root.grid_columnconfigure(0, weight=1)
 
     def _handle_login_click(self):
