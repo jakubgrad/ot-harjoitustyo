@@ -21,3 +21,6 @@
 - Created model entity, model repository
 - Created sql tables house_age, type_of_heating, formulas that support a model possible to change by administrator
 - Started working on the possibility by the administrator to update the formula by which energy consumption and pollution are calculated
+
+## Week 6
+-Added entries and submit button for expanding the energy model inside the database. So that an admin can change the parameters of the currently existing model
