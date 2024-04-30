@@ -3,7 +3,7 @@
     <img src="https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/118101ad-c42e-4c86-a188-d2cc3836f1b7" width="40%" alt="Description of the image">
 </p>
 
-## Packaging diagrams<br/>
+## Packaging diagrams
 
 <p align="center">
     <img src="/documentation/pictures/package_diagram.drawio.png" width="25%" alt="Description of the image">
@@ -26,6 +26,8 @@
     }
     User <-- House
 ```
+
+## Sequence diagrams
 Sequence Diagram that describes the first time a user registers and interacts with an app. The first screen of an app offers only a log in option. The second, opened after `handle_registration` allows the user to register with username *John Oliver* and password *birb*.  <br/>
 Next, an Assesment view is shown, which allows *John Oliver* to describe his house as built in *2002* and using type *2* heating. Next, `HouseService` asks for the id of the house of *John Oliver*, who himself is a user of id 43, but because there is no house references his id, HouseRepository returns *False*. Next, HouseRepository successfully creates a house for *John Oliver* and execution stack comes back to UI, which produces the House View with information and estimates of energy consumption and pollution.
 
