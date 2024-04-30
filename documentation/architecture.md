@@ -4,8 +4,10 @@
 </p>
 
 ## Packaging diagrams<br/>
-![Packaging diagram image](/documentation/pictures/package_diagram.drawio.png)
 
+<p align="center">
+    <img src="/documentation/pictures/package_diagram.drawio.png" width="50%" alt="Description of the image">
+</p>
 ## Class diagrams
 <br/>
 
