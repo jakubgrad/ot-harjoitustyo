@@ -3,13 +3,33 @@ from database_connection import get_database_connection
 from entities.model import Model
 from entities.house import House
 
+class ModelRepository:
+    """Repository class for handling model data and evaluation.
 
+    Args:
+        connection: Database connection object.
 
-class ModelRepository():
+    Attributes:
+        _connection: Database connection object.
+    """
+
     def __init__(self, connection):
+        """Constructor for the ModelRepository class.
+
+        Args:
+            connection: Database connection object.
+        """
         self._connection = connection
 
     def evaluate_equation_for_house(self, house):
+        """Evaluates the energy consumption and pollution for a given house.
+
+        Args:
+            house: House object for evaluation.
+
+        Returns:
+            Tuple containing energy consumption and pollution values.
+        """
         try:
             house_age, type_of_heating = house.unpack_parameters()
             house_age = self.find_min_year(house_age)
@@ -35,6 +55,14 @@ class ModelRepository():
             return False
 
     def check_equation(self, equation):
+        """Checks the validity of an equation.
+
+        Args:
+            equation: Equation to be checked.
+
+        Returns:
+            True if the equation is valid, False otherwise.
+        """
         print("equation")
 
         parameters = "1991" + ","+"2"
@@ -49,6 +77,14 @@ class ModelRepository():
         return True
 
     def find_min_year(self, year):
+        """Finds the minimum year from the database.
+
+        Args:
+            year: Year to be checked.
+
+        Returns:
+            Minimum year found in the database.
+        """
         year = int(year)
         cursor = self._connection.cursor()
         print("Attempts to get parameters from db")
@@ -71,12 +107,12 @@ class ModelRepository():
         return False
 
     def get_model(self):
-        # if not self.check_if_parameters_exist():
-        #    print("Parameters don't exist")
-        #    return False
+        """Gets the model from the database.
 
+        Returns:
+            Model object containing data from the database.
+        """
         cursor = self._connection.cursor()
-        # data = (username, password)
         print("Attempts to get parameters from db")
 
         cursor.execute('''
@@ -112,8 +148,15 @@ class ModelRepository():
             return Model(result_house_age, result_types_of_heating)
         return False
 
-
     def update_model(self, info):
+        """Updates the model in the database.
+
+        Args:
+            info: Information to be updated.
+
+        Returns:
+            True if the update is successful, False otherwise.
+        """
         cursor = self._connection.cursor()
 
         if "min_year" in info:
@@ -161,3 +204,4 @@ class ModelRepository():
             return True
 
 model_repository = ModelRepository(get_database_connection())
+
