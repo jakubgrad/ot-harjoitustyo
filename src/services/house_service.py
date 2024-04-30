@@ -178,4 +178,3 @@ house_service = HouseService(
     default_administrator_repository,
     default_model_repository
 )
-
