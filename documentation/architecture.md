@@ -1,5 +1,6 @@
 ## Structure
-├── data │ ├── app.db │ └── test_app.db<br>├── documentation<br>├── src │ ├── entities │ │ ├── administrator.py │ │ ├── house.py │ │ ├── model.py │ │ └── user.py │ ├── repositories │ │ ├── administrator_repository.py │ │ ├── house_repository.py │ │ ├── init.py │ │ └── model_repository.py │ ├── services │ │ ├── house_service.py │ │ └── init.py │ ├── tests │ ├── config.py │ ├── database_connection.py │ ├── index.py │ ├── initialize_database.py │ ├── notes │ └── ui │ ├── administration_view.py │ ├── assessment_view.py │ ├── house_view.py │ ├── init.py │ ├── login_view.py │ ├── registration_view.py │ └── ui.py<br>├── poetry.lock<br>├── pyproject.toml<br>├── pytest.ini<br>├── README.md<br>└── tasks.py
+![image](https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/118101ad-c42e-4c86-a188-d2cc3836f1b7)
+
 
 Packaging diagram:<br/>
 ![Packaging diagram image](/documentation/pictures/package_diagram.drawio.png)
