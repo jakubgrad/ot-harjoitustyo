@@ -1,12 +1,17 @@
 ## Structure
 <p align="center">
-    <img src="https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/118101ad-c42e-4c86-a188-d2cc3836f1b7" width="50%" alt="Description of the image">
+    <img src="https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/118101ad-c42e-4c86-a188-d2cc3836f1b7" width="40%" alt="Description of the image">
 </p>
 
-# Packaging diagrams<br/>
-![Packaging diagram image](/documentation/pictures/package_diagram.drawio.png)
+## Packaging diagrams
 
-# Class diagrams<br/>
+<p align="center">
+    <img src="/documentation/pictures/package_diagram.drawio.png" width="25%" alt="Description of the image">
+</p>
+
+## Class diagrams
+<br/>
+
 ```mermaid
  classDiagram
     class House{
@@ -21,10 +26,12 @@
     }
     User <-- House
 ```
+
+## Sequence diagrams
 Sequence Diagram that describes the first time a user registers and interacts with an app. The first screen of an app offers only a log in option. The second, opened after `handle_registration` allows the user to register with username *John Oliver* and password *birb*.  <br/>
 Next, an Assesment view is shown, which allows *John Oliver* to describe his house as built in *2002* and using type *2* heating. Next, `HouseService` asks for the id of the house of *John Oliver*, who himself is a user of id 43, but because there is no house references his id, HouseRepository returns *False*. Next, HouseRepository successfully creates a house for *John Oliver* and execution stack comes back to UI, which produces the House View with information and estimates of energy consumption and pollution.
 
-```
+```mermaid
 sequenceDiagram
     actor User
     User->>UI: click on "Registration" button
@@ -47,7 +54,11 @@ sequenceDiagram
 ```
 This differs from the experience of a user who has registered before and has already provided information on his house, because that user will, after logging in, immediatelly get the House view (which is provided by the `_handle_house()` function).<br>
 The application uses Tkinter for graphical interface. There is a few files for the ui
-# Overview of specific files
+## Overview of the application
+From the user perspective, application has several different views like `Login`, `Registration`, `Assessment`, `House`, and `Administration`. These are handled by Tkinter and all files responsible for the interface are in the `UI` subdirectory. The views have an injected dependency on house_service, which is handling the interaction between the UI and repositories `House`, `Model`, `User`, `Administrator`, each taking responsibility for the named part of the application. So for instance clicking on the `Register` button in `Registration` view calls a function in `house_service`, which in turn calls a function responsibile for registration inside the `User` repository. The repositories use connection to the database from `database_connection.py` to query, insert, and delete records from 
+an sqlite3 database `app.db` created with `poetry run invoke init`. If interested in what tables there are in the database, feel free to look into `initialize_database.py` and see what tables are when the file is executed. There is no other persistent storage of information and so the information on users, their homes, the properties of the energy model are all initialized inside `app.db`. 
+
+## Overview of specific files
 ###### tasks.py
 Contains commands for poetry, allowing e.g. `poetry run invoke start` to start the programme.
 ###### /ui
