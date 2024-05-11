@@ -21,6 +21,79 @@ class ModelRepository:
         """
         self._connection = connection
 
+    def calculate_pollution(self,parameters):
+        p1,p2 = parameters
+        cursor = self._connection.cursor()
+
+        year = self.find_min_year(p1)
+        # type of heating
+        print(f"year after find_mind_year: {year}")
+        type_of_heating = p2
+
+        print("Attempts to calculate pollution from parameters from db")
+
+        cursor.execute('''
+            SELECT 
+                pollution
+            FROM
+                house_age
+            WHERE 
+                year_min == ? 
+        ''', (year,))
+
+        house_age_pollution = cursor.fetchone()["pollution"]
+        print(f"houes age pollution found: {house_age_pollution }")
+
+        cursor.execute('''
+            SELECT 
+                pollution
+            FROM
+                types_of_heating
+            WHERE 
+                type == ? 
+        ''', (type_of_heating,))
+
+        type_of_heating_pollution = cursor.fetchone()["pollution"]
+        print(f"type_of_heating_pollution: {type_of_heating_pollution }")
+        return type_of_heating_pollution + house_age_pollution 
+
+    def calculate_consumption(self,parameters):
+        p1,p2 = parameters
+
+        cursor = self._connection.cursor()
+
+        year = self.find_min_year(p1)
+        # type of heating
+        print(f"year after find_mind_year: {year}")
+        type_of_heating = p2
+
+        print("Attempts to calculate pollution from parameters from db")
+
+        cursor.execute('''
+            SELECT 
+                energy_consumption 
+            FROM
+                house_age
+            WHERE 
+                year_min == ? 
+        ''', (year,))
+
+        house_age_consumption = cursor.fetchone()["energy_consumption"]
+        print(f"houes age consumption found: {house_age_consumption }")
+
+        cursor.execute('''
+            SELECT 
+                energy_consumption
+            FROM
+                types_of_heating
+            WHERE 
+                type == ? 
+        ''', (type_of_heating,))
+
+        type_of_heating_consumption = cursor.fetchone()["energy_consumption"]
+        print(f"type_of_heating_consumption: {type_of_heating_consumption }")
+        return type_of_heating_consumption + house_age_consumption 
+
     def find_min_year(self, year):
         """Finds the minimum year from the database.
 
