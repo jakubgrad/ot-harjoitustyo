@@ -42,49 +42,6 @@ class HouseRepository:
 
         self._connection.commit()
 
-    def calculate_pollution(self, house_id):
-        """Calculates the pollution based on house parameters.
-
-        Args:
-            house_id: ID of the house.
-
-        Returns:
-            Pollution value calculated based on house parameters.
-        """
-        result = self.fetch_house_parameters(house_id)
-        try:
-            # generated code begins
-            parameter_list = [int(x) for x in result.split(',')]
-            param1 = parameter_list[0]
-            param2 = parameter_list[1]
-            # generated code ends
-        except (ValueError, AttributeError):
-            param1 = 0
-            param2 = 0
-        return param1 * param2 + param1 + param2
-
-    def calculate_energy_consumption(self, house_id):
-        """Calculates the energy consumption based on house parameters.
-
-        Args:
-            house_id: ID of the house.
-
-        Returns:
-            Energy consumption value calculated based on house parameters.
-        """
-        result = self.fetch_house_parameters(house_id)
-        try:
-            # generated code begins
-            parameter_list = [int(x) for x in result.split(',')]
-            param1 = parameter_list[0]
-            param2 = parameter_list[1]
-            # generated code ends
-        except (ValueError, AttributeError):
-            param1 = 0
-            param2 = 0
-
-        return param1 * param2 + param1 + param2
-
     def update_house(self, house_id, new_parameters):
         """Updates the parameters of the specified house.
 
@@ -183,13 +140,19 @@ class HouseRepository:
         ''', (house_id,))
 
         result = cursor.fetchone()
+        print(f"result: {result}")
 
-        if result:
-            print(f"result: {result}")
-            print(f"id of the house: {result['id']}")
+        try:
             parameters = result['parameters']
-            return parameters
-        return False
-
+            print(f"parameters: {parameters}")
+            # generated code begins
+            parameter_list = [int(x) for x in parameters.split(',')]
+            param1 = parameter_list[0]
+            param2 = parameter_list[1]
+            print(param1, param2)
+            # generated code ends
+            return param1, param2
+        except (ValueError, AttributeError):
+            return 0,0
 
 house_repository = HouseRepository(get_database_connection())
