@@ -15,7 +15,7 @@ After clicking on `Update` the user is taken to `House` view with a centered pic
 It's always possible to change the information about the house by clicking on "Create/update assessment" and putting in different values. The app rememberes users who put in information about their homes, so that after filling out the assessment and logging in again, the user is presented with the `House` view again. <br>
 
 ## Admin interaction
-The admin interaction is a bit different. The goal is initially have an admin who can create other admins with their usernames and passwords. The first admin is by default one with username "m" and password "m". So to try the functionality of admin put "m" as username and as password and click "Login as administrator". <br><br>
+The admin interaction is a bit different. The goal is initially have an admin who can create other admins with their usernames and passwords. The first admin is by default one with username "m" and password "m". You can configure the default admin inside `.env`. So if you don't choose to set different default administrator credentials, after running `poetry run invoke init` put "m" as username and as password and click "Login as administrator". <br><br>
 <p align="center">
     <img src="https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/5ffef448-64d4-445c-8a32-239b2cb84c52" width="25%" alt="Description of the image">
 </p><br>
