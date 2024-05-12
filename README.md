@@ -7,7 +7,7 @@ The goal of the project is to create an app in which users can log in or registe
 
 # Releases
 [Release 1](https://github.com/jakubgrad/ot-harjoitustyo/releases/tag/viikko5) <br/>
-[Release 2](https://github.com/jakubgrad/ot-harjoitustyo/releases/tag/viikko6) for week 6
+[Release 2](https://github.com/jakubgrad/ot-harjoitustyo/releases/tag/viikko6) for week 6 <br/>
 [Release 3 for final return](https://github.com/jakubgrad/ot-harjoitustyo/releases/tag/viikko7)
 
 ## Documentation
