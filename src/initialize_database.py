@@ -1,4 +1,6 @@
 from database_connection import get_database_connection
+from config import DEFAULT_ADMIN_USERNAME
+from config import DEFAULT_ADMIN_PASSWORD
 
 
 def drop_tables(connection):
@@ -23,6 +25,12 @@ def drop_tables(connection):
     ''')
     cursor.execute('''
         drop table if exists formulas;
+    ''')
+    cursor.execute('''
+    drop index if exists year_min_index;
+    ''')
+    cursor.execute('''
+    drop index if exists type_index;
     ''')
 
     connection.commit()
@@ -67,6 +75,11 @@ def create_tables(connection):
     ''')
 
     cursor.execute('''
+    CREATE UNIQUE INDEX type_index
+    ON types_of_heating (type);
+    ''')
+
+    cursor.execute('''
         CREATE TABLE house_age ( 
             id INTEGER PRIMARY KEY,
             year_min INTEGER,
@@ -74,6 +87,11 @@ def create_tables(connection):
             energy_consumption INTEGER,
             pollution INTEGER
         );
+    ''')
+
+    cursor.execute('''
+    CREATE UNIQUE INDEX year_min_index
+    ON house_age (year_min);
     ''')
 
     cursor.execute('''
@@ -96,10 +114,10 @@ def create_tables(connection):
             username,
             password)
         VALUES (
-            'm',
-            'm'
+            ?,
+            ?
         );
-    ''')
+    ''', (DEFAULT_ADMIN_USERNAME, DEFAULT_ADMIN_PASSWORD))
 
     cursor.execute('''
         INSERT INTO house_age ( 
