@@ -1,11 +1,6 @@
 from tkinter import Tk
 from ui.ui import UI
 
-from config import DATABASE_PATH
-
-print(DATABASE_PATH)
-
-
 def main():
     window = Tk()
     window.title("House app")
