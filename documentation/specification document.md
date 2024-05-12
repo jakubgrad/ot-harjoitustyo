@@ -10,11 +10,6 @@ A user is welcomed by login/register buttons. If they click register, they're ta
 
 ![UI](/documentation/ui.png)
 
-#### Notes<br />
-Need to:
-- refactor the code so that UI knows only about User and House classes and not about user_ids etc
--there should be a manual
-
 #### 💻 Functionality<br />
 **Before logging in:**<br />
 - [x] The user can register in the system<br />
@@ -28,9 +23,5 @@ Need to:
 
 **Further development ideas**<br />
 - [x] An administrator role could be created. An administrator could update the values of the model and update the values for users<br />
-- [ ] Password reset functionality for when a user forgets their password<br />
+- [x] An administrator can create other administrators<br />
 - [x] The assessment could be expanded, or there could be a basic and an advanced assesment<br />
-- [ ] An option could be added to change username, e.g. in settings<br />
-- [ ] An option could be added to export information about your home<br />
-- [ ] Users could have several homes <br />
-
