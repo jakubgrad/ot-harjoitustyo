@@ -10,3 +10,5 @@ except FileNotFoundError:
 
 DATABASE_PATH = os.getenv("DATABASE_PATH") or "default"
 HOUSE_IMAGE_PATH = os.path.join(dirname, "..", "pictures/house.png")
+DEFAULT_ADMIN_USERNAME = os.getenv("DEFAULT_ADMIN_USERNAME") or "m"
+DEFAULT_ADMIN_PASSWORD = os.getenv("DEFAULT_ADMIN_PASSWORD") or "m"
