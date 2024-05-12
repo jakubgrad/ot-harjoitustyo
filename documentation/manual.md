@@ -23,8 +23,9 @@ You'll get `Administration` view, which currently allows you to put e.g. new nam
 <p align="center">
     <img src="https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/2234548c-cd32-4408-9108-31f8c46c71b2" width="50%" alt="Description of the image">
 </p>
-The forms support replacing the values of pollution, electricity consumption, and name of the existing types of heating and construction year / house age. For changing the parameters of house age, simply put in the form the same `Min year` (the lower bound of the construction year) and the new data will replace the existing row in the database. For types of heating, put in the same `type` number and the new values will replace the existing ones for the same type of heating.
-<br>
+The forms support replacing the values of pollution, electricity consumption, and name of the existing types of heating and construction year / house age. For changing the parameters of house age, simply put in the form the same `Min year` (the lower bound of the construction year) and the new data will replace the existing row in the database. For types of heating, put in the same `type` number and the new values will replace the existing ones for the same type of heating. <br>
+
+
 <p align="center">
     <img src="https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/07501204-7c86-4c6c-9816-63f5b4200cdc" width="50%" alt="Description of the image">
 </p>
