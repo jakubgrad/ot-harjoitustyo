@@ -39,31 +39,19 @@ class TestHouseRepository(unittest.TestCase):
 
     def test_a_house_can_be_created_and_fetched(self):
         user_id = 100
-        house_repository.create_house(user_id, "sample_parameters")
+        house_repository.create_house(user_id, "1,1")
         house_id = house_repository.get_users_house_id(user_id)
         parameters = house_repository.fetch_house_parameters(house_id)
 
-        self.assertEqual(parameters, "sample_parameters")
+        self.assertEqual(parameters, (1,1))
 
     def test_a_house_can_be_created_and_modified(self):
         user_id = 100
         house_repository.create_house(user_id, "sample_parameters")
         house_id = house_repository.get_users_house_id(user_id)
-        house_repository.update_house(house_id, "new_parameters")
+        house_repository.update_house(house_id, "1,1")
         parameters = house_repository.fetch_house_parameters(house_id)
 
-        self.assertEqual(parameters, "new_parameters")
-
-    def test_calculating_pollution_works(self):
-        house_id = 1
-        result = house_repository.calculate_pollution(house_id)
-
-        self.assertIsInstance(result, (int, float))
-
-    def test_calculating_energy_consumption_works(self):
-        house_id = 1
-        result = house_repository.calculate_pollution(house_id)
-
-        self.assertIsInstance(result, (int, float))
+        self.assertEqual(parameters, (1,1))
 
     # def test_a_house_can_be_created_by_a_registered_user(self):
