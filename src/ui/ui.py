@@ -5,13 +5,19 @@ from ui.administration_view import AdministrationView
 from ui.login_view import LoginView
 from ui.house_view import HouseView
 
-
 class UI:
+    """Class representing the user interface.
+
+    Args:
+        root (tk.Tk): The root Tkinter window.
+    """
+
     def __init__(self, root):
         self._root = root
         self._current_view = None
 
     def start(self):
+       """Starts the user interface by displaying the login view."""
         self._show_login_view()
 
     def _hide_current_view(self):
@@ -21,15 +27,12 @@ class UI:
         self._current_view = None
 
     def _handle_registration(self):
-        print("UI is handling registration")
         self._show_registration_view()
 
     def _handle_assessment(self, user):
-        print("UI is handling assessment for user {user}")
         self._show_assessment_view(user)
 
     def _handle_house(self, user):
-        print("UI is handling house view for user {user_id}")
         self._show_house_view(user)
 
     def _handle_login(self):
@@ -50,7 +53,6 @@ class UI:
         )
 
     def _show_registration_view(self):
-        print("attempt by UI to show registration view")
         self._hide_current_view()
 
         self._current_view = RegistrationView(
@@ -59,10 +61,7 @@ class UI:
             self._handle_assessment
         )
 
-        print("attempt by UI to show registration view finished")
-
     def _show_assessment_view(self, user):
-        print("attempt by UI to show assessment view")
         self._hide_current_view()
 
         self._current_view = AssessmentView(
@@ -72,10 +71,7 @@ class UI:
             user
         )
 
-        print("attempt by UI to show assessment view finished")
-
     def _show_administration_view(self, administrator):
-        print("attempt by UI to show administration view")
         self._hide_current_view()
 
         self._current_view = AdministrationView(
@@ -85,7 +81,6 @@ class UI:
         )
 
     def _show_house_view(self, user_id):
-        print("attempt by UI to show house view")
         self._hide_current_view()
 
         self._current_view = HouseView(
@@ -94,5 +89,3 @@ class UI:
             self._handle_assessment,
             user_id
         )
-
-        print("attempt by UI to show  view finished")

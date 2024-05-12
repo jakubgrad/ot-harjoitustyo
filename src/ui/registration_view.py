@@ -4,6 +4,14 @@ from services.house_service import house_service
 
 
 class RegistrationView:
+    """Class representing the view for user registration.
+
+    Args:
+        root (tk.Tk): The root Tkinter window.
+        handle_login (function): Callback function for entering login view.
+        handle_assessment (function): Callback function for entering assessment view.
+    """
+
     def __init__(self, root, handle_login, handle_assessment):
         self._root = root
         self._handle_login = handle_login
@@ -11,16 +19,16 @@ class RegistrationView:
         self._frame = None
         self._username_entry = None
         self._password_entry = None
-        # self_
 
         self._initialize()
 
     def destroy(self):
+       """Destroys the RegistrationView frame."""
         self._frame.destroy()
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
-        # Grid the frame within the root widget
+
         self._frame.grid(row=0, column=0)
 
         heading_label = ttk.Label(
@@ -57,7 +65,6 @@ class RegistrationView:
         logging_in_button.grid(row=4, column=0, columnspan=2, sticky=(
             constants.E, constants.W), padx=5, pady=5)
 
-        # Adjust column configuration for root widget
         self._root.grid_columnconfigure(0, weight=1)
 
     def _handle_registration_click(self):
@@ -67,7 +74,6 @@ class RegistrationView:
         user = house_service.register(username_entry, password_entry)
         if user:
             self._handle_assessment(user)
-            # self._handle_login()
         else:
             messagebox.showerror(title="Registration failed",
                                  message="Username taken")

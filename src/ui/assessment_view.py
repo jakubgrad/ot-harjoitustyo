@@ -4,7 +4,16 @@ from services.house_service import house_service
 
 
 class AssessmentView:
-    def __init__(self, root, handle_login, handle_house, user):  # user_id):
+    """Class representing the view for filling out a basic assessment about the user's home.
+
+    Args:
+        root (tk.Tk): The root Tkinter window.
+        handle_login (function): Function to handle the logout action
+        handle_house (function): Function to handle switching to house view.
+        user (User): The user object associated with the view.
+    """
+
+    def __init__(self, root, handle_login, handle_house, user):
         self._root = root
         self._handle_login = handle_login
         self._handle_house = handle_house
@@ -17,6 +26,7 @@ class AssessmentView:
         self._initialize()
 
     def destroy(self):
+        """Destroys the AssessmentView frame."""
         self._frame.destroy()
 
     def _initialize(self):

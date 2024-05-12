@@ -6,14 +6,20 @@ from PIL import Image, ImageTk
 
 
 class HouseView:
-    # user_id):
+    """Class representing the view for displaying house-related information and actions.
+
+    Args:
+        root (tk.Tk): The root Tkinter window.
+        handle_login (function): Callback function for handling the logout action.
+        handle_assessment (function): Callback function for handling the assessment action.
+        user (User): The user object associated with the view.
+    """
+
     def __init__(self, root, handle_login, handle_assessment, user):
         self._root = root
         self._handle_login = handle_login
         self._handle_assessment = handle_assessment
-        self._user_id = user._id
         self.user = user
-        self._house_id = house_service.get_users_house_id(user._id)
         self._house = house_service.get_users_house(user._id)
         self._frame = None
         self._house_age_entry = None
@@ -23,11 +29,12 @@ class HouseView:
         self._initialize()
 
     def destroy(self):
+        """Destroys the HouseView frame."""
         self._frame.destroy()
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
-        # Grid the frame within the root widget
+
         self._frame.grid(row=0, column=0)
 
         heading_label = ttk.Label(
@@ -69,8 +76,6 @@ class HouseView:
                            sticky=constants.W, padx=5, pady=5)
         consumption_label.grid(row=1, column=0, columnspan=2, padx=5, pady=5)
         pollution_label.grid(row=2, column=0, padx=5, pady=5)
-        # update_button.grid(row=3, column=0, columnspan=2, sticky=(
-        #    constants.E, constants.W), padx=5, pady=5)
         assessment_button.grid(row=4, column=0, columnspan=2, sticky=(
             constants.E, constants.W), padx=5, pady=5)
         logout_button.grid(row=5, column=0, columnspan=2, sticky=(

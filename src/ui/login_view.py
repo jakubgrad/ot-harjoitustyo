@@ -1,10 +1,18 @@
 from tkinter import ttk, constants, messagebox
 import tkinter as tk
-# from repositories.user_repository import user_repository
 from services.house_service import house_service
 
-
 class LoginView:
+    """Class representing the view for user login.
+
+    Args:
+        root (tk.Tk): The root Tkinter window.
+        handle_assessment (function): Callback function for entering assessment view.
+        handle_house (function): Callback function for entering house view.
+        handle_registration (function): Callback function for handling the registration view.
+        handle_administration (function): Callback function for handling the administration view.
+    """
+
     def __init__(self, root, handle_assessment, handle_house, handle_registration, handle_administration):
         self._root = root
         self._handle_registration = handle_registration
@@ -14,16 +22,15 @@ class LoginView:
         self._frame = None
         self._username_entry = None
         self._password_entry = None
-        # self_
 
         self._initialize()
 
     def destroy(self):
+        """Destroys the LoginView frame."""
         self._frame.destroy()
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
-        # Grid the frame within the root widget
         self._frame.grid(row=0, column=0)
 
         heading_label = ttk.Label(master=self._frame, text="Log in")
@@ -71,7 +78,7 @@ class LoginView:
         username_entry = self._username_entry.get()
         password_entry = self._password_entry.get()
         print(f"Attempt at logging in: {username_entry}")
-        user = house_service.login(username_entry, password_entry)
+        user = house_service.user_login(username_entry, password_entry)
         if user:
             print("handle login inside login view retrieved")
             print(f"user with params: id:{user._id},username:{user.username}")
@@ -89,7 +96,6 @@ class LoginView:
         password_entry = self._password_entry.get()
         print(f"Attempt at logging in as administrator: {username_entry}")
         administrator = house_service.administrator_login(username_entry, password_entry)
-        #administrator = house_service.administrator_login("m", "m")
         if administrator:
             print("handle login inside login view retrieved")
             print(
