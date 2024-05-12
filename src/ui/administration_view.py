@@ -192,6 +192,8 @@ class AdministrationView:
             print("Database update succeeded")
             messagebox.showinfo(title="Uploading data succeeded", 
                                 message="Database upload successful.")
+            self._rebuild_ui()
+
         else:
             print("Database update failed")
             messagebox.showerror(title="Uploading data failed",
@@ -222,6 +224,8 @@ class AdministrationView:
             print("Database update succeeded")
             messagebox.showinfo(title="Uploading data succeeded", 
                                 message="Database upload successful.")
+            self._rebuild_ui()
+
         else:
             print("Database update failed")
             messagebox.showerror(title="Uploading data failed",
@@ -239,6 +243,10 @@ class AdministrationView:
         else:
             messagebox.showerror(title="Registration failed",
                                  message="Username taken")
+
+    def _rebuild_ui(self):
+        self._frame.destroy()
+        self._initialize()
 
     def _handle_logout_click(self):
         self._handle_login()
