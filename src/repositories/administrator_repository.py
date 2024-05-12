@@ -30,12 +30,11 @@ class AdministratorRepository:
             Administrator object if login is successful, False otherwise.
         """
         if not self.check_if_administrator_name_exists(username):
-            print("Username doesn't exist")
             return False
 
-        cursor = self._connection.cursor()
         data = (username, password)
-        print("Admin attempts to log in")
+
+        cursor = self._connection.cursor()
 
         cursor.execute('''
             SELECT 
@@ -43,19 +42,15 @@ class AdministratorRepository:
             FROM
                 administrators
             WHERE
-                username=? 
+                username = ? 
             AND
-                password=?
+                password = ?
         ''', data)
 
         result = cursor.fetchone()
 
-        print(f"result of login query: {result}")
-
         user_id = result['id']
         username = result['username']
-        print("administrator object:")
-        print(f"administrator_id:{id},username:{username}")
         administrator = Administrator(user_id, username)
         if result:
             return administrator
@@ -111,6 +106,5 @@ class AdministratorRepository:
         if result:
             return True
         return False
-
 
 administrator_repository = AdministratorRepository(get_database_connection())
