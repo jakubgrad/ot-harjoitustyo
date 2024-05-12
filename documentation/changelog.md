@@ -28,3 +28,10 @@
 - Added basic tests for the administrator and model repositories
 - Added docstrings to entities, repositories, and house_service
 
+## Week 7
+- Default administrator is configurable
+- An administrator can add other administrators
+- Existing parameters of the energy model (of house age, of types of heating) can be modified and overwritten
+- All code has docstrings
+- Functionality for calculating pollution and energy consumption was moved from house repository to model repository
+- Database initialization uses Unique indexes to allow overwritting of the model's parameters
