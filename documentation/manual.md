@@ -24,4 +24,9 @@ You'll get `Administration` view, which currently allows you to put e.g. new nam
     <img src="https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/2234548c-cd32-4408-9108-31f8c46c71b2" width="50%" alt="Description of the image">
 </p>
 
+It's also possible to create a new administrator so that other administrators apart from the default one exist! After logging in as administrator, simply put in the username and password of the new administrator
+<p align="center">
+    <img src="https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/98d89978-eed4-4b97-905f-b5ee6700a42b" width="50%" alt="Description of the image">
+</p>
+
 **Note!** When you update the values of some type of heating or a range of ages, remember that to see the changes you likely need to log out and log in as administrator again.
