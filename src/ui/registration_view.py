@@ -23,7 +23,7 @@ class RegistrationView:
         self._initialize()
 
     def destroy(self):
-       """Destroys the RegistrationView frame."""
+        """Destroys the RegistrationView frame."""
         self._frame.destroy()
 
     def _initialize(self):
