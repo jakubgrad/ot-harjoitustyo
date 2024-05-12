@@ -25,3 +25,6 @@
 |       | 1       | Wrote docstrings, manual, improved architecture |
 |       | 4       | Made it possible to update the model from administrator view |
 |       | 1       | Wrote tests for administrator, model|
+| 12.05 | 3       | Connected model repository to rest of the code |
+| | 2       | Linted, wrote docstrings, cleaned the code |
+| | 2       | Made sure of <a href="https://ohjelmistotekniikka-hy.github.io/python/arvosteluperusteet"> checklist</a> |
