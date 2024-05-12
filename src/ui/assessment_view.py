@@ -37,7 +37,7 @@ class AssessmentView:
         heading_label = ttk.Label(
             master=self._frame, text="Fill out a basic assessment about your home!")
 
-        house_age_label = ttk.Label(master=self._frame, text="House age")
+        house_age_label = ttk.Label(master=self._frame, text="House age / construction year")
         self._house_age_entry = ttk.Entry(master=self._frame)
 
 
