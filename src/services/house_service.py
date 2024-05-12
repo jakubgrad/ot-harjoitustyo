@@ -45,10 +45,10 @@ class HouseService:
             User object if registration is successful and login is successful, False otherwise.
         """
         if self._user_repository.register(username_entry, password_entry):
-            return self.login(username_entry, password_entry)
+            return self.user_login(username_entry, password_entry)
         return False
 
-    def login(self, username_entry, password_entry):
+    def user_login(self, username_entry, password_entry):
         """Logs in a user.
 
         Args:
@@ -117,6 +117,7 @@ class HouseService:
             self._house_repository.update_house(house_id, new_parameters)
             return
         self._house_repository.create_house(user_id, new_parameters)
+        return
 
     def get_energy_consumption(self, house_id):
         """Gets the energy consumption for the specified house.
@@ -127,8 +128,10 @@ class HouseService:
         Returns:
             Energy consumption value.
         """
-        result = self._house_repository.calculate_energy_consumption(house_id)
-        return result
+
+        parameters = self._house_repository.fetch_house_parameters(house_id)
+        energy_consumption = self._model_repository.calculate_consumption(parameters)
+        return energy_consumption
 
     def get_pollution(self, house_id):
         """Gets the pollution value for the specified house.
@@ -139,8 +142,10 @@ class HouseService:
         Returns:
             Pollution value.
         """
-        result = self._house_repository.calculate_pollution(house_id)
-        return result
+
+        parameters = self._house_repository.fetch_house_parameters(house_id)
+        pollution = self._model_repository.calculate_pollution(parameters)
+        return pollution
 
     def get_model(self):
         """Gets the model.
@@ -161,16 +166,44 @@ class HouseService:
         """
         return self._model_repository.check_equation(text)
 
-    def update_model(self, house_age):
-        """Updates the model.
+    def update_types_of_heating(self, new_toh):
+        """Updates the model with a new type of heating row
 
         Args:
-            house_age: House age information.
+            new_toh: new type of heating row
 
         Returns:
             True if the update is successful, False otherwise.
         """
-        return self._model_repository.update_model(house_age)
+
+        return self._model_repository.update_types_of_heating(new_toh)
+
+    def update_house_age(self, new_house_age):
+        """Updates the house age information in the database.
+
+        Args:
+            new_house_age (dict): Dictionary containing the new house age information.
+
+        Returns:
+            bool: True if the update is successful, False otherwise.
+        """
+
+        return self._model_repository.update_house_age(new_house_age)
+
+    def create_new_admin(self,username_entry,password_entry):
+        """Registers a new admin.
+
+        Args:
+            username_entry: Username of the new admin.
+            password_entry: Password of the new admin.
+
+        Returns:
+            Administrator object if login is successful, False otherwise.
+        """
+
+        if self._administrator_repository.register(username_entry, password_entry):
+            return self.administrator_login(username_entry, password_entry)
+        return False
 
 house_service = HouseService(
     default_user_repository,
