@@ -52,10 +52,9 @@ class HouseRepository:
         Returns:
             None
         """
-        print("house repo tries to update the house")
+
         cursor = self._connection.cursor()
         data = (new_parameters, house_id)
-        print(f"data: {data}")
         cursor.execute('''
             UPDATE houses
             SET parameters = ?
@@ -82,7 +81,6 @@ class HouseRepository:
         ''', (user_id,))
 
         result = cursor.fetchone()
-        print(f"result of checking if {user_id} has a house: {result}")
         if result:
             return result['id']
         return False
@@ -109,9 +107,6 @@ class HouseRepository:
         if result:
             house_id = result['id']
             parameters = result['parameters']
-            print("Inside get_user_house")
-            print(f"house_id:{house_id}")
-            print(f"parameters:{parameters}")
             return House(house_id, parameters)
         return False
 
@@ -124,9 +119,6 @@ class HouseRepository:
         Returns:
             Parameters of the house if exists, False otherwise.
         """
-        # if not self.get_users_house_id(user_id):
-        #    print(f"{user_id} doesn't have a house, cannot fetch")
-        #    return False
 
         cursor = self._connection.cursor()
 
@@ -140,16 +132,13 @@ class HouseRepository:
         ''', (house_id,))
 
         result = cursor.fetchone()
-        print(f"result: {result}")
 
         try:
             parameters = result['parameters']
-            print(f"parameters: {parameters}")
             # generated code begins
             parameter_list = [int(x) for x in parameters.split(',')]
             param1 = parameter_list[0]
             param2 = parameter_list[1]
-            print(param1, param2)
             # generated code ends
             return param1, param2
         except (ValueError, AttributeError):

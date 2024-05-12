@@ -20,7 +20,7 @@ class ModelRepository:
         self._connection = connection
 
     def calculate_pollution(self,parameters):
-       """Calculates pollution based on given parameters.
+        """Calculates pollution based on given parameters.
 
         Args:
             parameters (tuple): A tuple containing year and type of heating.
@@ -28,9 +28,9 @@ class ModelRepository:
         Returns:
             int: The calculated pollution value.
         """
-
-        year,type_of_heating = parameters
+        year, type_of_heating = parameters
         year = self.find_min_year(year)
+
         if not year:
             #means that the house is older than there is data for
             year = self.find_min_year(2021)
@@ -113,7 +113,6 @@ class ModelRepository:
         """
         year = int(year)
         cursor = self._connection.cursor()
-        print("Attempts to get parameters from db")
 
         cursor.execute('''
             SELECT 
@@ -214,7 +213,6 @@ class ModelRepository:
         cursor = self._connection.cursor()
 
         data = tuple(new_house_age.values())
-        print(data)
 
         cursor.execute('''
             REPLACE INTO house_age(

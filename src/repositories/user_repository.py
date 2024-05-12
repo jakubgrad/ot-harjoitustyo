@@ -30,12 +30,10 @@ class UserRepository:
             User object if login is successful, False otherwise.
         """
         if not self.check_if_username_exists(username):
-            print("Username doesn't exist")
             return False
 
         cursor = self._connection.cursor()
         data = (username, password)
-        print("User attempts to log in")
 
         cursor.execute('''
             SELECT 
@@ -50,12 +48,8 @@ class UserRepository:
 
         result = cursor.fetchone()
 
-        print(f"result of login query: {result}")
-
         user_id = result['id']
         username = result['username']
-        print("User object:")
-        print(f"user_user_id:{id},username:{username}")
         user = User(user_id, username)
         if result:
             return user
@@ -72,12 +66,10 @@ class UserRepository:
             True if registration is successful, False otherwise.
         """
         if self.check_if_username_exists(username):
-            print("Username taken")
             return False
 
         cursor = self._connection.cursor()
         data = (username, password)
-        print("User being created")
         cursor.execute('''
             INSERT INTO users(
                 username,
@@ -86,7 +78,6 @@ class UserRepository:
                 (?,?)
         ''', data)
         self._connection.commit()
-        print("User created")
         return True
 
     def check_if_username_exists(self, username):
@@ -107,7 +98,6 @@ class UserRepository:
         ''', (username,))
 
         result = cursor.fetchone()
-        print(f"result: {result}")
         if result:
             return True
         return False
