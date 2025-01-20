@@ -1,5 +1,6 @@
 # House app
 The goal of the project is to create an app in which users can log in or register and receive their homes' energy consumption and pollution estimates based on filled out assessments. The application was developed using `Python 3.11` and using `Poetry` as a dependency manager<br/>
+This app was developed as part part of TKT20018 Intermediate Studies Project: Software Development Methods (4 cr) / Aineopintojen harjoitustyö: Ohjelmistotekniikka (4 op) course at University of Helsinki<br/>
 
 <p align="center">
     <img src="https://github.com/jakubgrad/ot-harjoitustyo/assets/113715885/b1dcbb13-18d2-4157-9e5e-98a0a9519cdc" width="50%" alt="Description of the image">
